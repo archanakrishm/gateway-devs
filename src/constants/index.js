@@ -1,24 +1,37 @@
 import manishShahImg from "../assets/images/Manish_Shah.jpg";
 import deepakHawaleImg from "../assets/images/Deepak_Hawale.jpg";
 import neilShahImg from "../assets/images/Neil_Shah.jpg";
+import heroImg from "../assets/images/hero.jpg";
+import hero2Img from "../assets/images/hero2.jpg";
+import hero3Img from "../assets/images/hero3.jpg";
+import project1Img from "../assets/images/project1.jpg";
+import project1bImg from "../assets/images/project1b.jpg";
+import project1cImg from "../assets/images/project1c.jpg";
+import whyBgImg from "../assets/images/whyBg.jpg";
+import villa1Img from "../assets/images/villa1.jpg";
+import villa2Img from "../assets/images/villa2.jpg";
+import villa3Img from "../assets/images/villa3.jpg";
+import poolImg from "../assets/images/pool.jpg";
+import natureImg from "../assets/images/nature.jpg";
+import contactBgImg from "../assets/images/contactBg.jpg";
 
 export const IMAGES = {
-  hero: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1920&q=90",
-  hero2: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=90",
-  hero3: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1920&q=90",
-  project1: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=85",
-  project1b: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=900&q=85",
-  project1c: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=900&q=85",
-  whyBg: "https://images.unsplash.com/photo-1602343168117-bb8afe3a9e65?w=1920&q=85",
-  villa1: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=900&q=85",
-  villa2: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=900&q=85",
-  villa3: "https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=900&q=85",
-  pool: "https://images.unsplash.com/photo-1572120360610-d971b9d7767c?w=900&q=85",
-  nature: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1920&q=85",
-  team1: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=85",
-  team2: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=85",
-  team3: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&q=85",
-  contactBg: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=1920&q=85",
+  hero: heroImg,
+  hero2: hero2Img,
+  hero3: hero3Img,
+  project1: project1Img,
+  project1b: project1bImg,
+  project1c: project1cImg,
+  whyBg: whyBgImg,
+  villa1: villa1Img,
+  villa2: villa2Img,
+  villa3: villa3Img,
+  pool: poolImg,
+  nature: natureImg,
+  team1: manishShahImg,
+  team2: deepakHawaleImg,
+  team3: neilShahImg,
+  contactBg: contactBgImg,
 };
 
 export const NAV_LINKS = ["Home", "Projects", "Why Getaway", "Team", "Contact"];
