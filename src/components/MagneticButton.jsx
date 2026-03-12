@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import { motion } from "motion/react";
 
-export default function MagneticButton({ children, onClick, style = {} }) {
+export default function MagneticButton({ children, onClick, className = "" }) {
   const [pos, setPos] = useState({ x: 0, y: 0 });
   const ref = useRef(null);
   const handleMove = (e) => {
@@ -16,24 +16,9 @@ export default function MagneticButton({ children, onClick, style = {} }) {
       animate={{ x: pos.x, y: pos.y }}
       transition={{ type: "spring", stiffness: 200, damping: 15 }}
       onClick={onClick}
-      style={{
-        background: "linear-gradient(135deg, #E8652D 0%, #D4451A 100%)",
-        color: "#fff",
-        border: "none",
-        padding: "16px 40px",
-        fontSize: "14px",
-        fontFamily: "'Outfit', sans-serif",
-        fontWeight: 500,
-        letterSpacing: "2px",
-        textTransform: "uppercase",
-        cursor: "pointer",
-        borderRadius: "0",
-        position: "relative",
-        overflow: "hidden",
-        ...style,
-      }}
+      className={`bg-gradient-to-br from-accent to-accent-dark text-white border-none font-sans font-medium tracking-[2px] uppercase cursor-pointer rounded-none relative overflow-hidden ${className}`}
     >
-      <span style={{ position: "relative", zIndex: 1 }}>{children}</span>
+      <span className="relative z-10">{children}</span>
     </motion.button>
   );
 }

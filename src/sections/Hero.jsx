@@ -4,7 +4,7 @@ import MagneticButton from "../components/MagneticButton";
 
 export default function Hero({ heroRef, heroIndex, setHeroIndex, heroY, heroOpacity, scrollTo }) {
   return (
-    <section id="home" ref={heroRef} style={{ position: "relative", height: "100vh", overflow: "hidden" }}>
+    <section id="home" ref={heroRef} className="relative h-screen overflow-hidden">
       <AnimatePresence mode="wait">
         <motion.div
           key={heroIndex}
@@ -12,43 +12,30 @@ export default function Hero({ heroRef, heroIndex, setHeroIndex, heroY, heroOpac
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 1.05, opacity: 0 }}
           transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
-          style={{ position: "absolute", inset: 0 }}
+          className="absolute inset-0"
         >
           <motion.img
             src={HERO_SLIDES[heroIndex].img}
             alt="Luxury villa"
-            style={{ y: heroY, width: "100%", height: "120%", objectFit: "cover", position: "absolute", top: "-10%" }}
+            className="w-full h-[120%] object-cover absolute -top-[10%]"
+            style={{ y: heroY }}
           />
         </motion.div>
       </AnimatePresence>
 
       {/* Grain overlay */}
-      <div style={{
-        position: "absolute", inset: "-50%", zIndex: 2, pointerEvents: "none",
-        background: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E")`,
-        animation: "grain 8s steps(10) infinite",
-      }} />
+      <div className="grain-bg absolute -inset-1/2 z-[2] pointer-events-none" />
 
-      {/* Dark overlays */}
-      <div style={{
-        position: "absolute", inset: 0, zIndex: 3,
-        background: "linear-gradient(180deg, rgba(10,10,10,0.4) 0%, rgba(10,10,10,0.1) 40%, rgba(10,10,10,0.6) 100%)",
-      }} />
+      {/* Dark overlay */}
+      <div className="bg-hero-overlay absolute inset-0 z-[3]" />
 
       {/* Hero Content */}
-      <motion.div style={{ opacity: heroOpacity, position: "relative", zIndex: 4, height: "100%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center", padding: "0 24px" }}>
+      <motion.div className="relative z-[4] h-full flex flex-col justify-center items-center text-center px-6" style={{ opacity: heroOpacity }}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 1 }}
-          style={{
-            fontSize: "11px",
-            letterSpacing: "6px",
-            textTransform: "uppercase",
-            color: "#E8652D",
-            marginBottom: "24px",
-            fontWeight: 500,
-          }}
+          className="text-[11px] tracking-[6px] uppercase text-accent mb-6 font-medium"
         >
           Where
         </motion.div>
@@ -57,14 +44,7 @@ export default function Hero({ heroRef, heroIndex, setHeroIndex, heroY, heroOpac
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7, duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-          style={{
-            fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(48px, 9vw, 140px)",
-            fontWeight: 300,
-            lineHeight: 0.95,
-            letterSpacing: "-2px",
-            marginBottom: "12px",
-          }}
+          className="font-serif text-[clamp(48px,9vw,140px)] font-light leading-[0.95] tracking-[-2px] mb-3"
         >
           LUXURY
         </motion.h1>
@@ -72,15 +52,9 @@ export default function Hero({ heroRef, heroIndex, setHeroIndex, heroY, heroOpac
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9, duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-          style={{
-            fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "clamp(48px, 9vw, 140px)",
-            fontWeight: 300,
-            lineHeight: 0.95,
-            letterSpacing: "-2px",
-          }}
+          className="font-serif text-[clamp(48px,9vw,140px)] font-light leading-[0.95] tracking-[-2px]"
         >
-          MEETS <span style={{ fontStyle: "italic", color: "#E8652D" }}>NATURE</span>
+          MEETS <span className="italic text-accent">NATURE</span>
         </motion.h1>
 
         <AnimatePresence mode="wait">
@@ -90,13 +64,7 @@ export default function Hero({ heroRef, heroIndex, setHeroIndex, heroY, heroOpac
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -15 }}
             transition={{ duration: 0.6 }}
-            style={{
-              fontSize: "15px",
-              fontWeight: 300,
-              color: "rgba(255,255,255,0.6)",
-              marginTop: "32px",
-              letterSpacing: "1px",
-            }}
+            className="text-[15px] font-light text-white/60 mt-8 tracking-[1px]"
           >
             {HERO_SLIDES[heroIndex].tagline}
           </motion.p>
@@ -106,24 +74,20 @@ export default function Hero({ heroRef, heroIndex, setHeroIndex, heroY, heroOpac
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.3, duration: 1 }}
-          style={{ marginTop: "48px" }}
+          className="mt-12"
         >
-          <MagneticButton onClick={() => scrollTo("contact")}>Register Interest</MagneticButton>
+          <MagneticButton onClick={() => scrollTo("contact")} className="py-4 px-10 text-sm">Register Interest</MagneticButton>
         </motion.div>
 
         {/* Slide indicators */}
-        <div style={{ position: "absolute", bottom: "48px", display: "flex", gap: "12px" }}>
+        <div className="absolute bottom-12 flex gap-3">
           {HERO_SLIDES.map((_, i) => (
             <motion.div
               key={i}
               onClick={() => setHeroIndex(i)}
-              style={{
-                width: i === heroIndex ? "48px" : "24px",
-                height: "2px",
-                background: i === heroIndex ? "#E8652D" : "rgba(255,255,255,0.3)",
-                cursor: "pointer",
-                transition: "all 0.4s ease",
-              }}
+              className={`h-0.5 cursor-pointer transition-all duration-[400ms] ${
+                i === heroIndex ? "w-12 bg-accent" : "w-6 bg-white/30"
+              }`}
             />
           ))}
         </div>
