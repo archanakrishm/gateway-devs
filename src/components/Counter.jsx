@@ -17,24 +17,11 @@ export default function Counter({ end, suffix = "", label }) {
     return () => clearInterval(interval);
   }, [isInView, end]);
   return (
-    <div ref={ref} style={{ textAlign: "center" }}>
-      <div style={{
-        fontFamily: "'Cormorant Garamond', serif",
-        fontSize: "clamp(48px, 5vw, 72px)",
-        fontWeight: 300,
-        color: "#E8652D",
-        lineHeight: 1,
-      }}>
+    <div ref={ref} className="text-center">
+      <div className="font-serif text-[clamp(48px,5vw,72px)] font-light text-accent leading-none">
         {count}{suffix}
       </div>
-      <div style={{
-        fontFamily: "'Outfit', sans-serif",
-        fontSize: "13px",
-        letterSpacing: "2.5px",
-        textTransform: "uppercase",
-        color: "rgba(255,255,255,0.5)",
-        marginTop: "12px",
-      }}>
+      <div className="font-sans text-[13px] tracking-[2.5px] uppercase text-white/50 mt-3">
         {label}
       </div>
     </div>

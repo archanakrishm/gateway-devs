@@ -8,75 +8,37 @@ export default function Navbar({ scrolled, scrollTo }) {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        right: 0,
-        zIndex: 1000,
-        padding: scrolled ? "16px 48px" : "28px 48px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        background: scrolled ? "rgba(10,10,10,0.92)" : "transparent",
-        backdropFilter: scrolled ? "blur(20px)" : "none",
-        borderBottom: scrolled ? "1px solid rgba(255,255,255,0.05)" : "none",
-        transition: "all 0.5s ease",
-      }}
+      className={`fixed top-0 inset-x-0 z-[1000] flex items-center justify-between px-12 transition-all duration-500 ${
+        scrolled
+          ? "py-4 bg-dark/92 backdrop-blur-[20px] border-b border-white/5"
+          : "py-7 bg-transparent backdrop-blur-0 border-b border-transparent"
+      }`}
     >
       <motion.div
         whileHover={{ scale: 1.02 }}
-        style={{ cursor: "pointer", display: "flex", alignItems: "center", gap: "12px" }}
+        className="cursor-pointer flex items-center gap-3"
         onClick={() => scrollTo("home")}
       >
-        <div style={{
-          width: "36px",
-          height: "36px",
-          background: "linear-gradient(135deg, #E8652D, #D4451A)",
-          borderRadius: "4px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          fontFamily: "'Cormorant Garamond', serif",
-          fontWeight: 700,
-          fontSize: "18px",
-        }}>G</div>
+        <div className="w-9 h-9 bg-gradient-to-br from-accent to-accent-dark rounded flex items-center justify-center font-serif font-bold text-lg">
+          G
+        </div>
         <div>
-          <div style={{
-            fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "22px",
-            fontWeight: 600,
-            letterSpacing: "1px",
-            lineHeight: 1.1,
-          }}>GETAWAY</div>
-          <div style={{
-            fontSize: "8px",
-            letterSpacing: "4px",
-            textTransform: "uppercase",
-            color: "rgba(255,255,255,0.4)",
-            fontWeight: 300,
-          }}>DEVELOPERS</div>
+          <div className="font-serif text-[22px] font-semibold tracking-[1px] leading-tight">GETAWAY</div>
+          <div className="text-[8px] tracking-[4px] uppercase text-white/40 font-light">DEVELOPERS</div>
         </div>
       </motion.div>
 
-      <div style={{ display: "flex", gap: "36px", alignItems: "center" }}>
+      <div className="flex gap-9 items-center">
         {NAV_LINKS.map((link) => (
           <span
             key={link}
-            className="nav-link"
+            className="nav-link text-xs tracking-[2px] uppercase font-normal text-white/75"
             onClick={() => scrollTo(link.toLowerCase().replace(/\s+/g, ""))}
-            style={{
-              fontSize: "12px",
-              letterSpacing: "2px",
-              textTransform: "uppercase",
-              fontWeight: 400,
-              color: "rgba(255,255,255,0.75)",
-            }}
           >
             {link}
           </span>
         ))}
-        <MagneticButton onClick={() => scrollTo("contact")} style={{ padding: "12px 28px", fontSize: "11px" }}>
+        <MagneticButton onClick={() => scrollTo("contact")} className="py-3 px-7 text-[11px]">
           Register Interest
         </MagneticButton>
       </div>

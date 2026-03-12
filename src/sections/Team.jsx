@@ -4,50 +4,36 @@ import Reveal from "../components/Reveal";
 
 export default function Team() {
   return (
-    <section id="team" style={{ padding: "120px 48px", maxWidth: "1200px", margin: "0 auto" }}>
+    <section id="team" className="py-30 px-12 max-w-[1200px] mx-auto">
       <Reveal>
-        <div style={{
-          fontSize: "11px", letterSpacing: "4px", textTransform: "uppercase",
-          color: "#E8652D", marginBottom: "12px",
-        }}>Leadership</div>
+        <div className="text-[11px] tracking-[4px] uppercase text-accent mb-3">Leadership</div>
       </Reveal>
       <Reveal delay={0.1}>
-        <h2 style={{
-          fontFamily: "'Cormorant Garamond', serif",
-          fontSize: "clamp(36px, 5vw, 64px)",
-          fontWeight: 300, lineHeight: 1.1, marginBottom: "80px",
-        }}>
-          The <span style={{ fontStyle: "italic" }}>Visionaries</span>
+        <h2 className="font-serif text-[clamp(36px,5vw,64px)] font-light leading-[1.1] mb-20">
+          The <span className="italic">Visionaries</span>
         </h2>
       </Reveal>
 
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "40px" }}>
+      <div className="grid grid-cols-3 gap-10">
         {TEAM_MEMBERS.map((member, i) => (
           <Reveal key={i} delay={i * 0.15}>
             <motion.div
-              className="team-card"
+              className="team-card rounded overflow-hidden bg-white"
               whileHover={{ y: -8 }}
               transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-              style={{ borderRadius: "4px", overflow: "hidden", background: "#111" }}
             >
-              <div style={{ height: "420px", overflow: "hidden" }}>
+              <div className="h-[420px] overflow-hidden">
                 <motion.img
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.6 }}
                   src={member.img}
                   alt={member.name}
-                  style={{ width: "100%", height: "100%", objectFit: "cover", filter: "grayscale(30%)" }}
+                  className="w-full h-full object-cover grayscale-[30%]"
                 />
               </div>
-              <div style={{ padding: "28px 24px" }}>
-                <div style={{
-                  fontFamily: "'Cormorant Garamond', serif",
-                  fontSize: "24px", fontWeight: 500, marginBottom: "4px",
-                }}>{member.name}</div>
-                <div style={{
-                  fontSize: "12px", letterSpacing: "2px", textTransform: "uppercase",
-                  color: "#E8652D", fontWeight: 400,
-                }}>{member.role}</div>
+              <div className="py-7 px-6">
+                <div className="font-serif text-2xl font-medium mb-1">{member.name}</div>
+                <div className="text-xs tracking-[2px] uppercase text-accent font-normal">{member.role}</div>
               </div>
             </motion.div>
           </Reveal>

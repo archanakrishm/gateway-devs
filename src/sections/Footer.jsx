@@ -2,50 +2,31 @@ import { NAV_LINKS, SOCIAL_LINKS } from "../constants";
 
 export default function Footer({ scrollTo }) {
   return (
-    <footer style={{
-      padding: "60px 48px 40px",
-      borderTop: "1px solid rgba(255,255,255,0.05)",
-      maxWidth: "1400px",
-      margin: "0 auto",
-    }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "48px" }}>
+    <footer className="pt-15 px-12 pb-10 border-t border-white/5 max-w-[1400px] mx-auto">
+      <div className="flex justify-between items-start mb-12">
         <div>
-          <div style={{
-            fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "32px", fontWeight: 600, letterSpacing: "1px", marginBottom: "8px",
-          }}>GETAWAY</div>
-          <div style={{
-            fontSize: "12px", color: "rgba(255,255,255,0.35)", fontWeight: 300,
-          }}>Where Luxury Meets Nature</div>
+          <div className="font-serif text-[32px] font-semibold tracking-[1px] mb-2">GETAWAY</div>
+          <div className="text-xs text-white/35 font-light">Where Luxury Meets Nature</div>
         </div>
-        <div style={{ display: "flex", gap: "36px" }}>
+        <div className="flex gap-9">
           {NAV_LINKS.map((link) => (
             <span
               key={link}
-              className="nav-link"
+              className="nav-link text-xs tracking-[1.5px] uppercase text-white/45 cursor-pointer"
               onClick={() => scrollTo(link.toLowerCase().replace(/\s+/g, ""))}
-              style={{
-                fontSize: "12px", letterSpacing: "1.5px", textTransform: "uppercase",
-                color: "rgba(255,255,255,0.45)", cursor: "pointer",
-              }}
             >
               {link}
             </span>
           ))}
         </div>
       </div>
-      <div style={{
-        display: "flex", justifyContent: "space-between", alignItems: "center",
-        paddingTop: "24px", borderTop: "1px solid rgba(255,255,255,0.05)",
-      }}>
-        <div style={{ fontSize: "12px", color: "rgba(255,255,255,0.25)" }}>
+      <div className="flex justify-between items-center pt-6 border-t border-white/5">
+        <div className="text-xs text-white/25">
           © 2026 Getaway Developers. All rights reserved.
         </div>
-        <div style={{ display: "flex", gap: "24px" }}>
+        <div className="flex gap-6">
           {SOCIAL_LINKS.map((s) => (
-            <span key={s} className="nav-link" style={{
-              fontSize: "12px", color: "rgba(255,255,255,0.35)", cursor: "pointer",
-            }}>{s}</span>
+            <span key={s} className="nav-link text-xs text-white/35 cursor-pointer">{s}</span>
           ))}
         </div>
       </div>

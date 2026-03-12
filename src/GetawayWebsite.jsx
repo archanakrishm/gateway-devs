@@ -24,43 +24,6 @@ if (!document.querySelector(`link[href="${fontLink.href}"]`)) {
   document.head.appendChild(fontLink);
 }
 
-// ─── Global Styles ───
-const GLOBAL_STYLES = `
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  ::selection { background: #E8652D; color: #fff; }
-  ::-webkit-scrollbar { width: 6px; }
-  ::-webkit-scrollbar-track { background: #0A0A0A; }
-  ::-webkit-scrollbar-thumb { background: #E8652D; }
-  html { scroll-behavior: smooth; }
-  a { text-decoration: none; color: inherit; }
-  .nav-link { position: relative; cursor: pointer; }
-  .nav-link::after {
-    content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px;
-    background: #E8652D; transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-  .nav-link:hover::after { width: 100%; }
-  .img-reveal { position: relative; overflow: hidden; }
-  .img-reveal img { transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1); }
-  .img-reveal:hover img { transform: scale(1.05); }
-  .team-card { position: relative; overflow: hidden; cursor: pointer; }
-  .team-card::before {
-    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 0;
-    background: linear-gradient(transparent, rgba(232,101,45,0.15));
-    transition: height 0.5s ease; z-index: 1;
-  }
-  .team-card:hover::before { height: 100%; }
-  .feature-item { border-bottom: 1px solid rgba(255,255,255,0.06); padding: 32px 0; }
-  .feature-item:hover { border-bottom-color: #E8652D; }
-  @keyframes grain {
-    0%, 100% { transform: translate(0, 0); }
-    10% { transform: translate(-5%, -10%); }
-    30% { transform: translate(3%, -15%); }
-    50% { transform: translate(-15%, 5%); }
-    70% { transform: translate(8%, 10%); }
-    90% { transform: translate(-10%, 15%); }
-  }
-`;
-
 export default function GetawayWebsite() {
   const [heroIndex, setHeroIndex] = useState(0);
   const [scrolled, setScrolled] = useState(false);
@@ -85,15 +48,7 @@ export default function GetawayWebsite() {
   };
 
   return (
-    <div style={{
-      fontFamily: "'Outfit', sans-serif",
-      background: "#0A0A0A",
-      color: "#F5F0EB",
-      overflowX: "hidden",
-      minHeight: "100vh",
-    }}>
-      <style>{GLOBAL_STYLES}</style>
-
+    <div className="font-sans bg-dark text-white overflow-x-hidden min-h-screen">
       <Navbar scrolled={scrolled} scrollTo={scrollTo} />
       <Hero
         heroRef={heroRef}

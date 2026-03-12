@@ -1,10 +1,68 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@import "tailwindcss";
+
+@theme {
+  --color-accent: #E8652D;
+  --color-accent-dark: #D4451A;
+  --color-dark: #0A0A0A;
+  --font-sans: 'Outfit', sans-serif;
+  --font-serif: 'Cormorant Garamond', serif;
 }
 
-body {
-  margin: 0;
-  background: #0A0A0A;
+::selection { background: #E8652D; color: #fff; }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0A0A0A; }
+::-webkit-scrollbar-thumb { background: #E8652D; }
+html { scroll-behavior: smooth; }
+a { text-decoration: none; color: inherit; }
+
+.nav-link { position: relative; cursor: pointer; }
+.nav-link::after {
+  content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px;
+  background: #E8652D; transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.nav-link:hover::after { width: 100%; }
+
+.img-reveal { position: relative; overflow: hidden; }
+.img-reveal img { transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1); }
+.img-reveal:hover img { transform: scale(1.05); }
+
+.team-card { position: relative; overflow: hidden; cursor: pointer; }
+.team-card::before {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 0;
+  background: linear-gradient(transparent, rgba(232,101,45,0.15));
+  transition: height 0.5s ease; z-index: 1;
+}
+.team-card:hover::before { height: 100%; }
+
+.feature-item { border-bottom: 1px solid rgba(255,255,255,0.06); padding: 32px 0; }
+.feature-item:hover { border-bottom-color: #E8652D; }
+
+.grain-bg {
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  animation: grain 8s steps(10) infinite;
+}
+
+.bg-hero-overlay {
+  background: linear-gradient(180deg, rgba(10,10,10,0.4) 0%, rgba(10,10,10,0.1) 40%, rgba(10,10,10,0.6) 100%);
+}
+
+.bg-why-overlay {
+  background: linear-gradient(180deg, rgba(10,10,10,0.85) 0%, rgba(10,10,10,0.6) 50%, rgba(10,10,10,0.9) 100%);
+}
+
+.bg-contact-gradient {
+  background: linear-gradient(135deg, #111 0%, #0A0A0A 50%, #151010 100%);
+}
+
+.bg-contact-glow {
+  background: radial-gradient(circle, #E8652D, transparent 70%);
+}
+
+@keyframes grain {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-5%, -10%); }
+  30% { transform: translate(3%, -15%); }
+  50% { transform: translate(-15%, 5%); }
+  70% { transform: translate(8%, 10%); }
+  90% { transform: translate(-10%, 15%); }
 }
