@@ -6,6 +6,8 @@
   --color-dark: #0A0A0A;
   --font-sans: 'Outfit', sans-serif;
   --font-serif: 'Cormorant Garamond', serif;
+  --font-mono: 'Poppins', monospace;
+  --color-light-white: rgba(217, 217, 217, 0.2);
 }
 
 ::selection { background: #E8652D; color: #fff; }
@@ -65,4 +67,15 @@ a { text-decoration: none; color: inherit; }
   50% { transform: translate(-15%, 5%); }
   70% { transform: translate(8%, 10%); }
   90% { transform: translate(-10%, 15%); }
+}
+.orange-play::after {
+  content: '';
+    width: 0; height: 0;
+  border-style: solid;
+  border-width: 12px 0px 12px 20px;
+  border-color: transparent transparent transparent #f4442d;
+  transform: rotate(0deg);
+  position: relative;
+    left: 4px;
+
 }

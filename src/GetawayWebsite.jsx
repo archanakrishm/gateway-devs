@@ -18,7 +18,7 @@ import Marquee from "./components/Marquee";
 
 // ─── Fonts (injected via style tag) ───
 const fontLink = document.createElement("link");
-fontLink.href = "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Outfit:wght@200;300;400;500;600&display=swap";
+fontLink.href = "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Outfit:wght@200;300;400;500;600&display=swap&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap";
 fontLink.rel = "stylesheet";
 if (!document.querySelector(`link[href="${fontLink.href}"]`)) {
   document.head.appendChild(fontLink);
@@ -48,7 +48,7 @@ export default function GetawayWebsite() {
   };
 
   return (
-    <div className="font-sans bg-dark text-white overflow-x-hidden min-h-screen">
+    <div className="font-mono bg-dark text-white overflow-x-hidden min-h-screen">
       <Navbar scrolled={scrolled} scrollTo={scrollTo} />
       <Hero
         heroRef={heroRef}
