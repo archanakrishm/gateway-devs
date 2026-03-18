@@ -1,79 +1,63 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { PROJECT_IMAGES, PROJECT_STATS } from "../constants";
+import { PROJECT_IMAGES, PROJECT_STATS, PROJECT_BG } from "../constants";
 import Reveal from "../components/Reveal";
 import MagneticButton from "../components/MagneticButton";
+import circleArrowLeft from "../assets/images/circle-arrow-left.svg";
+import circleArrowRight from "../assets/images/circle-arrow-right.svg";
+
+
 
 export default function Projects() {
   const [projImg, setProjImg] = useState(0);
 
   return (
-    <section id="projects" className="py-30 px-12 max-w-[1400px] mx-auto">
-      <Reveal>
-        <div className="flex items-baseline gap-5 mb-3">
-          <span className="font-serif text-[clamp(12px,1.5vw,16px)] text-accent font-medium tracking-[3px] uppercase">01</span>
-          <span className="text-[11px] tracking-[4px] uppercase text-white/35">Our Projects</span>
-        </div>
-      </Reveal>
-      <Reveal delay={0.1}>
-        <h2 className="font-serif text-[clamp(40px,6vw,80px)] font-light leading-[1.05] mb-20">
-          Elysian <span className="italic">Meadows</span>
-        </h2>
-      </Reveal>
-
-      <div className="grid grid-cols-2 gap-10 items-start">
+    <section id="projects" className="py-[38px] xl:py-30 px-12 xl:px-[80px]  mx-auto relative">
+      <img src={PROJECT_BG} className="w-full object-cover absolute top-0 left-0 h-full" />
+      <div className="grid xl:grid-cols-2 gap-[20px] xl:gap-10 items-start max-w-[1270px] mx-auto">
         <Reveal direction="left">
-          <div className="img-reveal h-[600px] rounded">
-            <AnimatePresence mode="wait">
-              <motion.img
-                key={projImg}
-                src={PROJECT_IMAGES[projImg]}
-                alt="Elysian Meadows"
-                initial={{ opacity: 0, scale: 1.1 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.8 }}
-                className="w-full h-full object-cover absolute top-0 left-0"
-              />
-            </AnimatePresence>
-            <div className="absolute bottom-6 left-6 right-6 z-[5] flex justify-between items-center">
-              <div className="flex gap-2">
-                {PROJECT_IMAGES.map((_, i) => (
-                  <div key={i} onClick={() => setProjImg(i)} className={`w-2 h-2 rounded-full cursor-pointer transition-all duration-300 ${
-                    i === projImg ? "bg-accent" : "bg-white/40"
-                  }`} />
-                ))}
-              </div>
-              <div className="flex gap-2">
-                <button onClick={() => setProjImg((p) => (p - 1 + PROJECT_IMAGES.length) % PROJECT_IMAGES.length)} className="w-10 h-10 rounded-full border border-white/30 bg-black/30 backdrop-blur-[10px] text-white cursor-pointer flex items-center justify-center text-base">‹</button>
-                <button onClick={() => setProjImg((p) => (p + 1) % PROJECT_IMAGES.length)} className="w-10 h-10 rounded-full border border-white/30 bg-black/30 backdrop-blur-[10px] text-white cursor-pointer flex items-center justify-center text-base">›</button>
-              </div>
+          <div className="img-reveal">
+            <h2 className="font-black text-[41px] xl:text-[70px] uppercase pb-[33px] xl:pb-[57px]">Project</h2>
+            <div className="flex items-baseline gap-4 flex-col xl:pb-[73px]">
+              <span className="text-orange text-[35px] xl:text-[60px] font-semibold leading-0 xl:leading-[60px]">01</span>
+              <h3 className="text-[35px] xl:text-[60px] font-semibold xl:leading-[60px]">Elysian Meadows</h3>
+              <p className="xl:max-w-xl text-white leading-relaxed text-[13px] md:text-[20px]">
+                With 38+ Years Of Experience In Residential, Commercial, Second
+                Home Development And Has Delivered Over 5 Million Square Feet
+                Constructed Across India... Responsible For Quality Construction,
+                Timely Execution And Completion Ensuring Every Villa
+              </p>
             </div>
+            <MagneticButton onClick={() => scrollTo("contact")} className="py-4 px-10 text-[20px] bg-orange text-white max-xl:hidden gap-[14px]">Know More
+              <span className=" w-[57px] h-[57px] flex  justify-center items-center white-play relative"></span>
+            </MagneticButton>
           </div>
         </Reveal>
-
-        <Reveal direction="right" delay={0.2}>
-          <div className="pt-10">
-            <div className="text-[11px] tracking-[4px] uppercase text-accent mb-6">Featured Project</div>
-            <p className="text-base font-light text-white/65 leading-[1.8] mb-10">
-              With 38+ years of experience in residential, commercial, and second home development, Getaway has
-              delivered over 5 million square feet of premium construction across India — responsible for
-              quality craftsmanship, timely execution, and meticulous attention to detail ensuring every villa
-              embodies the perfect fusion of luxury and nature.
-            </p>
-
-            <div className="grid grid-cols-2 gap-8 py-10 border-y border-white/[0.06]">
-              {PROJECT_STATS.map((s, i) => (
-                <div key={i}>
-                  <div className="font-serif text-4xl font-normal text-accent leading-none">{s.val}</div>
-                  <div className="text-[11px] tracking-[2px] uppercase text-white/35 mt-2">{s.label}</div>
+        <Reveal direction="right" delay={0.2} >
+          <div className="max-xl:flex max-xl:flex-col max-xl:items-center">
+            <div className="img-reveal max-w-[522px]  rounded-[30px] bg-black-mask py-[25px] px-[27px] xl:ml-auto max-xl:mb-[27px]">
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={projImg}
+                  src={PROJECT_IMAGES[projImg]}
+                  alt="Elysian Meadows"
+                  initial={{ opacity: 0, scale: 1.1 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.8 }}
+                  className="w-full h-[268px] md:h-[452px] object-cover  top-0 left-0 rounded-[30px]"
+                />
+              </AnimatePresence>
+              <div className="z-[5] flex justify-between items-center">
+                <div className="flex gap-2 w-full justify-between gap-2 pt-[30px] xl:pt-[49px]">
+                  <button onClick={() => setProjImg((p) => (p - 1 + PROJECT_IMAGES.length) % PROJECT_IMAGES.length)} className="w-[40px] h-[40px] xl:w-[70px] xl:h-[70px] rounded-full text-white cursor-pointer flex items-center justify-center text-base"><img src={circleArrowLeft} /></button>
+                  <button onClick={() => setProjImg((p) => (p + 1) % PROJECT_IMAGES.length)} className="w-[40px] h-[40px] xl:w-[70px] xl:h-[70px] rounded-full text-white cursor-pointer flex items-center justify-center text-base"><img src={circleArrowRight} /></button>
                 </div>
-              ))}
+              </div>
             </div>
-
-            <div className="mt-10">
-              <MagneticButton className="py-4 px-10 text-sm">Know More</MagneticButton>
-            </div>
+            <MagneticButton onClick={() => scrollTo("contact")} className="py-4 px-10 text-[14px] xl:text-[20px] bg-orange text-white xl:hidden gap-[14px]">Know More
+              <span className=" w-[57px] h-[57px] flex  justify-center items-center white-play relative"></span>
+            </MagneticButton>
           </div>
         </Reveal>
       </div>

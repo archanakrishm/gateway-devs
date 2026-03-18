@@ -1,33 +1,16 @@
 import { motion, AnimatePresence } from "motion/react";
-import { HERO_SLIDES } from "../constants";
+import { HERO_SLIDES, HOME_BG } from "../constants";
 import MagneticButton from "../components/MagneticButton";
 
-export default function Hero({ heroRef, heroIndex, setHeroIndex, heroY, heroOpacity, scrollTo }) {
+export default function Hero({ heroRef, heroOpacity, scrollTo }) {
   return (
     <section id="home" ref={heroRef} className="relative h-screen overflow-hidden">
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={heroIndex}
-          initial={{ scale: 1.15, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          exit={{ scale: 1.05, opacity: 0 }}
-          transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
-          className="absolute inset-0"
-        >
-          <motion.img
-            src={HERO_SLIDES[heroIndex].img}
+      <img
+            src={HOME_BG}
             alt="Luxury villa"
             className="w-full h-[120%] object-cover absolute -top-[10%]"
-            style={{ y: heroY }}
-          />
-        </motion.div>
-      </AnimatePresence>
+         />
 
-      {/* Grain overlay */}
-      <div className="grain-bg absolute -inset-1/2 z-[2] pointer-events-none" />
-
-      {/* Dark overlay */}
-      <div className="bg-hero-overlay absolute inset-0 z-[3]" />
 
       {/* Hero Content */}
       <motion.div className="relative z-[4] h-full flex flex-col justify-center items-center text-center px-6 xl:pt-[174px]" style={{ opacity: heroOpacity }}>
@@ -52,7 +35,7 @@ export default function Hero({ heroRef, heroIndex, setHeroIndex, heroY, heroOpac
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9, duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-          className="text-[clamp(48px,102px,102px)] font-bold leading-[0.9]"
+          className="text-[43px]  xl:text-[clamp(48px,102px,102px)] font-bold leading-[0.9]"
         >
           MEETS NATURE
         </motion.h1>
@@ -74,27 +57,13 @@ export default function Hero({ heroRef, heroIndex, setHeroIndex, heroY, heroOpac
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.3, duration: 1 }}
-          className="mt-12"
+          className="mt-[22px] xl:mt-12"
         >
-          <MagneticButton onClick={() => scrollTo("contact")} className="py-4 px-10 text-[26px] text-black bg-white">Register Interest
-
-
-            <span className="bg-black w-[57px] h-[57px] flex rounded-full justify-center items-center orange-play relative"></span>
+          <MagneticButton onClick={() => scrollTo("contact")} className="py-[6px] xl:py-4 ps-[20px] pe-[6px] xl:ps-[49px] xl:pe-[12px] text-[14px] xl:text-[26px] text-black bg-white gap-[20px] xl:gap-[37px]">Register Interest
+            <span className="bg-black w-[29px] h-[29px] xl:w-[57px] xl:h-[57px] flex rounded-full justify-center items-center orange-play relative"></span>
           </MagneticButton>
         </motion.div>
 
-        {/* Slide indicators */}
-        <div className="absolute bottom-12 flex gap-3">
-          {HERO_SLIDES.map((_, i) => (
-            <motion.div
-              key={i}
-              onClick={() => setHeroIndex(i)}
-              className={`h-0.5 cursor-pointer transition-all duration-[400ms] ${
-                i === heroIndex ? "w-12 bg-accent" : "w-6 bg-white/30"
-              }`}
-            />
-          ))}
-        </div>
       </motion.div>
     </section>
   );

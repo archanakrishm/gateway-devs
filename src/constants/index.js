@@ -1,6 +1,6 @@
-import manishShahImg from "../assets/images/Manish_Shah.jpg";
-import deepakHawaleImg from "../assets/images/Deepak_Hawale.jpg";
-import neilShahImg from "../assets/images/Neil_Shah.jpg";
+import manishShahImg from "../assets/images/Manish_Shah.png";
+import deepakHawaleImg from "../assets/images/Deepak_Hawale.png";
+import neilShahImg from "../assets/images/Neil_Shah.png";
 import heroImg from "../assets/images/hero.jpg";
 import hero2Img from "../assets/images/hero2.jpg";
 import hero3Img from "../assets/images/hero3.jpg";
@@ -14,6 +14,18 @@ import villa3Img from "../assets/images/villa3.jpg";
 import poolImg from "../assets/images/pool.jpg";
 import natureImg from "../assets/images/nature.jpg";
 import contactBgImg from "../assets/images/contactBg.jpg";
+import icoNature from "../assets/images/nature.svg";
+import icoVilla from "../assets/images/villa.svg";
+import icoPhone from "../assets/images/phone.svg";
+import icoEmail from "../assets/images/mail.svg";
+import icoOffice from "../assets/images/pin.svg";
+import contactBG from "../assets/images/contact_bg.jpg";
+import projectBG from "../assets/images/project_bg.jpg";
+import whyBG from "../assets/images/why_etaway_bg.jpg";
+import icoClose from "../assets/images/close.svg";
+import icoSearch from "../assets/images/search.svg";
+import icoPhoneWhite from "../assets/images/phone_white.svg";
+import icoChat from "../assets/images/chat.svg";
 
 export const IMAGES = {
   hero: heroImg,
@@ -32,6 +44,18 @@ export const IMAGES = {
   team2: deepakHawaleImg,
   team3: neilShahImg,
   contactBg: contactBgImg,
+  icoNature: icoNature,
+  icoVilla: icoVilla,
+  icoPhone: icoPhone,
+  icoEmail: icoEmail,
+  icoOffice: icoOffice,
+  contactBG: contactBG,
+  projectBG: projectBG,
+  whyBG: whyBG,
+  icoClose: icoClose,
+  icoSearch: icoSearch,
+  icoPhoneWhite: icoPhoneWhite,
+  icoChat: icoChat,
 };
 
 export const NAV_LINKS = ["Home", "Projects", "Why Getaway", "Team", "Contact"];
@@ -45,9 +69,8 @@ export const HERO_SLIDES = [
 export const PROJECT_IMAGES = [IMAGES.project1, IMAGES.project1b, IMAGES.project1c];
 
 export const FEATURES = [
-  { icon: "✦", title: "Nature-Themed Design", desc: "Eco-friendly materials and biophilic architecture that harmonizes with the natural landscape." },
-  { icon: "◈", title: "Luxury Villa Management", desc: "Seamless rental management ensuring optimal yields and pristine maintenance of your property." },
-  { icon: "⬡", title: "Premium Craftsmanship", desc: "38+ years of expertise delivering over 5 million sq. ft. of world-class construction across India." },
+  { icon: IMAGES.icoNature, title: "Nature-themed designs using natural, eco-friendly materials" },
+  { icon: IMAGES.icoVilla, title: "Luxury villa rental management for seamless yields and maintenance"},
 ];
 
 export const PROJECT_STATS = [
@@ -64,10 +87,15 @@ export const TEAM_MEMBERS = [
 ];
 
 export const CONTACT_INFO = [
-  { icon: "✆", label: "Phone", value: "+91 99675 58712" },
-  { icon: "✉", label: "Email", value: "info@getawaydevelopers.com" },
-  { icon: "◎", label: "Office", value: "A25, Satyam Shopping Centre, MG Road, Ghatkopar East, Mumbai 400 077" },
+  { icon: IMAGES.icoPhone, label: "Phone", value: "+91 99675 58712" },
+  { icon: IMAGES.icoEmail, label: "Email", value: "info@getawaydevelopers.com" },
+  { icon: IMAGES.icoOffice, label: "Office", value: "A25, Satyam Shopping Centre, MG Road, Ghatkopar East, Mumbai 400 077" },
 ];
+
+export const CONTACT_BG = IMAGES.contactBG;
+export const PROJECT_BG = IMAGES.projectBG;
+export const WHY_BG = IMAGES.whyBG;
+export const HOME_BG = IMAGES.hero;
 
 export const GALLERY_ITEMS = [
   { img: IMAGES.villa1, span: "1 / 3", rSpan: "1 / 2" },

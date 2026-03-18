@@ -1,43 +1,47 @@
 import { motion } from "motion/react";
 import { TEAM_MEMBERS } from "../constants";
 import Reveal from "../components/Reveal";
+import MagneticButton from "../components/MagneticButton";
 
 export default function Team() {
   return (
-    <section id="team" className="py-30 px-12 max-w-[1200px] mx-auto">
+    <section id="team" className="py-[40px] xl:py-[100px] px-[20px] xl:px-[85px] mx-auto bg-grey">
+      <div className="max-w-[1270px] mx-auto">
       <Reveal>
-        <div className="text-[11px] tracking-[4px] uppercase text-accent mb-3">Leadership</div>
-      </Reveal>
-      <Reveal delay={0.1}>
-        <h2 className="font-serif text-[clamp(36px,5vw,64px)] font-light leading-[1.1] mb-20">
-          The <span className="italic">Visionaries</span>
-        </h2>
+        <h2 className="text-[30px] xl:text-[60px] tracking-[4px] text-body-title uppercase font-bold mb-[20px] xl:mb-[132px] text-center xl:text-left">team</h2>
       </Reveal>
 
-      <div className="grid grid-cols-3 gap-10">
+      <div className="grid xl:grid-cols-3 gap-10">
         {TEAM_MEMBERS.map((member, i) => (
           <Reveal key={i} delay={i * 0.15}>
             <motion.div
-              className="team-card rounded overflow-hidden bg-white"
-              whileHover={{ y: -8 }}
+              className={`team-card overflow-hidden max-xl:flex max-xl:justify-center max-xl:items-center max-xl:gap-[36px] ${i === 1 ? "max-xl:flex-row-reverse" : ""}`}
+              // whileHover={{ y: -8 }}
               transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
             >
-              <div className="h-[420px] overflow-hidden">
+              <div className="rounded-[183px] w-[112px] xl:w-[333px] bg-grey-light xl:mx-auto">
                 <motion.img
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.6 }}
+                  // whileHover={{ scale: 1.05 }}
+                  // transition={{ duration: 0.6 }}
                   src={member.img}
                   alt={member.name}
-                  className="w-full h-full object-cover grayscale-[30%]"
+                  className="w-[112px] h-[179px] xl:w-[333px] xl:h-[532px] object-cover grayscale-[30%]"
                 />
               </div>
-              <div className="py-7 px-6">
-                <div className="font-serif text-2xl font-medium mb-1">{member.name}</div>
-                <div className="text-xs tracking-[2px] uppercase text-accent font-normal">{member.role}</div>
+              <div className="py-7">
+                <h3 className="text-[20px] xl:text-[40px] font-semibold text-body-title xl:text-center">{member.name}</h3>
+                <span className="text-[20px] xl:text-[40px] text-body-title xl:text-center block w-full">{member.role}</span>
               </div>
             </motion.div>
           </Reveal>
         ))}
+      </div>
+      <div className="flex justify-center xl:justify-end mt-[44px] xl:mt-[190px]">
+   <MagneticButton onClick={() => scrollTo("contact")} className="py-4 px-10 text-[14px] xl:text-[20px] bg-orange text-white xl:hidden  gap-[14px]">Know More
+                <span className=" w-[57px] h-[57px] flex  justify-center items-center white-play relative"></span>
+              </MagneticButton>
+      </div>
+    
       </div>
     </section>
   );

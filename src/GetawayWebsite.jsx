@@ -59,13 +59,18 @@ export default function GetawayWebsite() {
         scrollTo={scrollTo}
       />
       <Features />
-      <Marquee text="Luxury Living · Elysian Meadows · Where Nature Meets Design" />
+      {/* <Marquee text="Luxury Living · Elysian Meadows · Where Nature Meets Design" /> */}
       <Projects />
+      <div className="pt-[27px] xl:pt-[89px] relative bg-white"></div>
       <WhyGetaway />
-      <Gallery />
+      <div className="pt-[27px] xl:pt-[89px] relative bg-white"></div>
+
+      {/* <Gallery /> */}
       <Team />
+            <div className="pt-[27px] xl:pt-[89px] relative bg-white"></div>
+
       <Contact />
-      <Footer scrollTo={scrollTo} />
+      {/* <Footer scrollTo={scrollTo} /> */}
     </div>
   );
 }

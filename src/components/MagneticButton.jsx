@@ -16,9 +16,10 @@ export default function MagneticButton({ children, onClick, className = "" }) {
       animate={{ x: pos.x, y: pos.y }}
       transition={{ type: "spring", stiffness: 200, damping: 15 }}
       onClick={onClick}
-      className={`border-none font-semibold text-[26px] cursor-pointer rounded-full relative overflow-hidden ${className}`}
+      className={`border-none font-semibold cursor-pointer rounded-full relative overflow-hidden flex justify-center items-center ${className}`}
     >
-      <span className="relative z-10 flex justify-center gap-[37px] items-center">{children}</span>
+      {children}
+      {/* <span className="relative z-10 flex justify-center items-center">{children}</span> */}
     </motion.button>
   );
 }

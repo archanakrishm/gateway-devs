@@ -1,51 +1,53 @@
-import { CONTACT_INFO } from "../constants";
+import { CONTACT_INFO, CONTACT_BG } from "../constants";
 import Reveal from "../components/Reveal";
 import MagneticButton from "../components/MagneticButton";
 
+
 export default function Contact() {
+
+  console.log(CONTACT_BG);
   return (
-    <section id="contact" className="relative py-40 px-12 overflow-hidden">
-      <div className="bg-contact-gradient absolute inset-0" />
-      <div className="bg-contact-glow absolute top-0 -right-[10%] w-1/2 h-full opacity-[0.08]" />
+    <section id="contact" className="relative py-[40px] xl:py-40 px-12 overflow-hidden relative">
 
-      <div className="relative max-w-[1200px] mx-auto grid grid-cols-2 gap-20">
+      <img src={CONTACT_BG} alt="Contact Background" className="absolute top-0 left-0 w-full h-full object-cover" />
+
+
+      {/* <div className="bg-contact-gradient absolute inset-0" /> */}
+      {/* <div className="bg-contact-glow absolute top-0 -right-[10%] w-1/2 h-full opacity-[0.08]" /> */}
+
+      <div className="relative max-w-[1270px] mx-auto flex flex-col-reverse xl:grid xl:grid-cols-2 gap-[40px] xl:gap-20">
         <Reveal direction="left">
-          <div>
-            <div className="text-[11px] tracking-[4px] uppercase text-accent mb-6">Get In Touch</div>
-            <h2 className="font-serif text-[clamp(36px,4vw,56px)] font-light leading-[1.15] mb-12">
-              Begin Your <span className="italic">Journey</span>
-            </h2>
-
-            <div className="flex flex-col gap-8">
+          <div className="flex flex-col justify-center h-full">
+            <h2 className="text-[30px] xl:text-[60px] text-white uppercase font-bold mb-[40px] xl:mb-[84px] max-xl:text-center">Contact</h2>
+            <div className="flex flex-col gap-[20px] xl:gap-8">
               {CONTACT_INFO.map((c, i) => (
-                <div key={i} className="feature-item flex gap-5 items-start">
-                  <div className="text-xl text-accent shrink-0 mt-0.5">{c.icon}</div>
+                <div key={i} className="flex gap-[20px] xl:gap-5 items-start">
+                  <div className="text-xl shrink-0 mt-0.5"><img className="max-xl:w-[20px] max-xl:h-[20px]" src={c.icon} alt={c.label} /></div>
                   <div>
-                    <div className="text-[11px] tracking-[2px] uppercase text-white/35 mb-1.5">{c.label}</div>
-                    <div className="text-base font-light text-white/80 leading-[1.6]">{c.value}</div>
+                    <div className="text-[17px] xl:text-[35px] font-medium text-white">{c.value}</div>
                   </div>
                 </div>
               ))}
-            </div>
-
-            <div className="mt-10 rounded overflow-hidden border border-white/[0.06]">
-              <iframe
-                title="Getaway Developers Office"
-                src="https://maps.google.com/maps?q=Satyam+Shopping+Centre,+MG+Road,+Ghatkopar+East,+Mumbai&z=15&output=embed"
-                width="100%"
-                height="220"
-                style={{ border: 0 }}
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="grayscale-[30%] hover:grayscale-0 transition-[filter] duration-500"
-              />
             </div>
           </div>
         </Reveal>
 
         <Reveal direction="right" delay={0.2}>
-          <div className="bg-white/[0.03] border border-white/[0.06] rounded p-12">
+          <div className="mt-10 rounded-[30px] overflow-hidden border border-white/[0.06]">
+              <iframe
+                title="Getaway Developers Office"
+                src="https://maps.google.com/maps?q=Satyam+Shopping+Centre,+MG+Road,+Ghatkopar+East,+Mumbai&z=15&output=embed"
+                width="100%"
+                height="556"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="grayscale-[30%] hover:grayscale-0 transition-[filter] duration-500 h-[344px] xl:h-[556px]"
+              />
+            </div>
+
+          {/* <div className="bg-white/[0.03] border border-white/[0.06] rounded p-12">
             <div className="font-serif text-[28px] font-normal mb-9">Register Interest</div>
             {["Full Name", "Email Address", "Phone Number"].map((placeholder, i) => (
               <div key={i} className="mb-6">
@@ -66,7 +68,7 @@ export default function Contact() {
               />
             </div>
             <MagneticButton className="w-full mt-4 py-4 px-10 text-sm">Submit Enquiry</MagneticButton>
-          </div>
+          </div> */}
         </Reveal>
       </div>
     </section>
