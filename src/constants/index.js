@@ -26,6 +26,12 @@ import icoClose from "../assets/images/close.svg";
 import icoSearch from "../assets/images/search.svg";
 import icoPhoneWhite from "../assets/images/phone_white.svg";
 import icoChat from "../assets/images/chat.svg";
+import instagramIcon from "../assets/images/insta.svg";
+import linkedinIcon from "../assets/images/in.svg";
+import facebookIcon from "../assets/images/air.svg";
+import villaImg1 from "../assets/images/villa4.jpg";
+import villaImg2 from "../assets/images/villa5.jpg";
+import villaImg3 from "../assets/images/villa6.jpg";
 
 export const IMAGES = {
   hero: heroImg,
@@ -56,9 +62,29 @@ export const IMAGES = {
   icoSearch: icoSearch,
   icoPhoneWhite: icoPhoneWhite,
   icoChat: icoChat,
+  villaImg1: villaImg1,
+  villaImg2: villaImg2,
+  villaImg3: villaImg3,
+    villaImg4: villa1Img,
+  villaImg5: villa2Img,
+  villaImg6: villa3Img,
 };
 
 export const NAV_LINKS = ["Home", "Projects", "Why Getaway", "Team", "Contact"];
+export const NAV_LINKS_FOOTER1 = ["Project", "Why Getaway", "Contact", "Investor Relations", "All Projects", "Disclaimer"];
+export const NAV_LINKS_FOOTER2 = ["Our Story", "Our Impact", "Careers", "Investor Relations", "All Projects", "Disclaimer"];
+
+
+
+export const GETAWAYVILLAS = [
+  { img: IMAGES.villaImg1 },
+  { img: IMAGES.villaImg2 },
+  { img: IMAGES.villaImg3 },
+  // { img: IMAGES.villaImg4 },
+  { img: IMAGES.villaImg5 },
+  { img: IMAGES.villaImg6 },
+
+];
 
 export const HERO_SLIDES = [
   { img: IMAGES.hero, subtitle: "Elysian Meadows", tagline: "Luxury villas nestled in nature's embrace" },
@@ -81,9 +107,9 @@ export const PROJECT_STATS = [
 ];
 
 export const TEAM_MEMBERS = [
-  { name: "Manish Shah", role: "Co-Founder", img: manishShahImg },
-  { name: "Deepak Hawale", role: "Co-Founder", img: deepakHawaleImg },
-  { name: "Neil Shah", role: "Co-Founder", img: neilShahImg },
+  { name: "Manish Shah", role: "Co-Founder", img: manishShahImg, description: "With 38+ years of experience in residential, commercial, second home development and has delivered over 5 million square feet constructed across India… responsible for quality construction, timely execution and completion ensuring every Villa" },
+  { name: "Deepak Hawale", role: "Co-Founder", img: deepakHawaleImg ,description: "With 38+ years of experience in residential, commercial, second home development and has delivered over 5 million square feet constructed across India… responsible for quality construction, timely execution and completion ensuring every Villa" },
+  { name: "Neil Shah", role: "Co-Founder", img: neilShahImg, description: "With 38+ years of experience in residential, commercial, second home development and has delivered over 5 million square feet constructed across India… responsible for quality construction, timely execution and completion ensuring every Villa" },
 ];
 
 export const CONTACT_INFO = [
@@ -104,4 +130,8 @@ export const GALLERY_ITEMS = [
   { img: IMAGES.villa3, span: "2 / 3", rSpan: "2 / 3" },
 ];
 
-export const SOCIAL_LINKS = ["Instagram", "LinkedIn", "Facebook"];
+export const SOCIAL_LINKS = [
+  { name: "Instagram", icon: instagramIcon },
+  { name: "LinkedIn", icon: linkedinIcon },
+  { name: "Facebook", icon: facebookIcon }
+];

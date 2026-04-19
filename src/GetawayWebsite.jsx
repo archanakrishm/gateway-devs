@@ -12,6 +12,7 @@ import Gallery from "./sections/Gallery";
 import Team from "./sections/Team";
 import Contact from "./sections/Contact";
 import Footer from "./sections/Footer";
+import WhyGetawayTwo from "./sections/WhyGatawayTwo";
 
 // ─── Components ───
 import Marquee from "./components/Marquee";
@@ -61,16 +62,16 @@ export default function GetawayWebsite() {
       <Features />
       {/* <Marquee text="Luxury Living · Elysian Meadows · Where Nature Meets Design" /> */}
       <Projects />
-      <div className="pt-[27px] xl:pt-[89px] relative bg-white"></div>
-      <WhyGetaway />
-      <div className="pt-[27px] xl:pt-[89px] relative bg-white"></div>
+      {/* <div className="pt-[27px] xl:pt-[89px] relative bg-white"></div> */}
+      {/* <WhyGetaway /> */}
+      <WhyGetawayTwo />
 
       {/* <Gallery /> */}
       <Team />
-            <div className="pt-[27px] xl:pt-[89px] relative bg-white"></div>
+            {/* <div className="pt-[27px] xl:pt-[89px] relative bg-white"></div> */}
 
       <Contact />
-      {/* <Footer scrollTo={scrollTo} /> */}
+      <Footer scrollTo={scrollTo} />
     </div>
   );
 }
