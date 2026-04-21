@@ -97,6 +97,10 @@ export const PROJECT_IMAGES = [IMAGES.project1, IMAGES.project1b, IMAGES.project
 export const FEATURES = [
   { icon: IMAGES.icoNature, title: "Nature-themed designs using natural, eco-friendly materials" },
   { icon: IMAGES.icoVilla, title: "Luxury villa rental management for seamless yields and maintenance"},
+    { icon: IMAGES.icoNature, title: "Nature-themed designs using natural, eco-friendly materials" },
+      { icon: IMAGES.icoVilla, title: "Luxury villa rental management for seamless yields and maintenance"},
+
+
 ];
 
 export const PROJECT_STATS = [

@@ -38,8 +38,8 @@ export default function Footer({ scrollTo }) {
 
         <div className="flex flex-col gap-2">
           <div className="font-serif text-[32px] font-semibold tracking-[1px] mb-2"><img src={footerLogo} alt="Footer Logo" /></div>
-          <div className="text-[14px] text-white font-light"><span>Call Us: </span><strong className="font-medium">+91 98196 08906</strong></div>
-          <div className="text-[14px] text-white font-light flex items-center gap-3"><span>Follow us on</span>
+          <div className="text-[14px] text-white font-light flex justify-between items-center gap-3"><span>Call Us: </span><strong className="font-medium text-[18px]">+91 98196 08906</strong></div>
+          <div className="text-[14px] text-white font-light flex justify-between items-center gap-3"><span>Follow us on</span>
 
             <ul className="flex gap-[6px]">
               {SOCIAL_LINKS.map((s) => (

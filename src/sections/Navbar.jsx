@@ -31,7 +31,7 @@ const closeMenu = () => setMenuOpen(false);
       >
         <div>
           <h1>
-            <img src={logo} alt="Getaway Developers Logo" className="max-xl:w-[94px]"/>
+            <img src={logo} alt="Getaway Developers Logo" className="max-xl:w-[94px] w-[137px]"/>
           </h1>
         </div>
         <button id="menuBtn" className="hamburger block xl:hidden focus:outline-none" type="button" aria-label="Toggle menu" onClick={toggleMenu}>
@@ -41,7 +41,7 @@ const closeMenu = () => setMenuOpen(false);
       </motion.div>
 
       
-      <div className={`xl:flex xl:gap-[54px] items-center bg-light-white px-[40px] xl:px-[74px] py-[22px] xl:rounded-full border border-white/10 nav-links mobile-menu ${menuOpen ? "flex" : "hidden"}`}>
+      <div className={`xl:flex xl:gap-[54px] items-center bg-light-white px-[40px] xl:px-[45px] py-[13px] xl:rounded-full border border-white/10 nav-links mobile-menu ${menuOpen ? "flex" : "hidden"}`}>
         <div className="flex justify-between gap-1 w-full xl:hidden mb-[20px]">
           <div>
             <h1>
@@ -61,7 +61,7 @@ const closeMenu = () => setMenuOpen(false);
         {NAV_LINKS.map((link) => (
           <span
             key={link}
-            className="nav-link text-[15px] xl:text-2xl font-medium text-white max-xl:py-[28px]"
+            className="nav-link text-[15px] xl:text-[17px] font-medium text-white max-xl:py-[28px]"
             onClick={() => scrollTo(link.toLowerCase().replace(/\s+/g, ""))}
           >
             {link}

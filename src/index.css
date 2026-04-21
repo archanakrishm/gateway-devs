@@ -75,7 +75,7 @@ a { text-decoration: none; color: inherit; }
   content: '';
     width: 0; height: 0;
   border-style: solid;
-  border-width: 12px 0px 12px 20px;
+  border-width: 10px 0px 10px 16px;
   border-color: transparent transparent transparent #f4442d;
   transform: rotate(0deg);
   position: relative;
@@ -87,7 +87,7 @@ a { text-decoration: none; color: inherit; }
   content: '';
     width: 0; height: 0;
   border-style: solid;
-  border-width: 12px 0px 12px 20px;
+  border-width: 8px 0px 8px 17px;
   border-color: transparent transparent transparent white;
   transform: rotate(0deg);
   position: relative;

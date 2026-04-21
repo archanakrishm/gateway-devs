@@ -9,7 +9,7 @@ export default function WhyGetawayTwo() {
   const sliderImages = [villa1, villa2, villa3, pool];
 
   return (
-    <section id="projects2" className="py-[38px] xl:py-[72px] px-12 xl:px-[80px]  mx-auto relative bg-white">
+    <section id="whygetaway" className="py-[38px] xl:py-[72px] px-12 xl:px-[80px]  mx-auto relative bg-white">
       <div className="max-w-[1270px] mx-auto">
         <header className="flex items-center gap-4 xl:pb-[73px] justify-between">
           <h2 className="text-[#414141] text-[30px] xl:text-[80px] font-extrabold uppercase  md:leading-3 xl:leading-[90px]">Why Getaway</h2>

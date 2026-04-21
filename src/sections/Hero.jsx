@@ -18,7 +18,7 @@ export default function Hero({ heroRef, heroOpacity, scrollTo }) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 1 }}
-          className="text-[33px] xl:text-[71px] text-white mb-6 font-extralight leading-[0]"
+          className="text-[33px] xl:text-[51px] text-white mb-6 font-extralight leading-[0]"
         >
           Where
         </motion.div>
@@ -27,7 +27,7 @@ export default function Hero({ heroRef, heroOpacity, scrollTo }) {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7, duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-          className="text-[78px] xl:text-[clamp(78px,186px,186px)] font-black leading-[0.9] mb-0"
+          className="text-[78px] xl:text-[clamp(78px,134px,134px)] font-black leading-[0.9] mb-0"
         >
           LUXURY
         </motion.h1>
@@ -35,7 +35,7 @@ export default function Hero({ heroRef, heroOpacity, scrollTo }) {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9, duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-          className="text-[43px]  xl:text-[clamp(48px,102px,102px)] font-bold leading-[0.9]"
+          className="text-[43px]  xl:text-[clamp(48px,74px,74px)] font-bold leading-[0.9]"
         >
           MEETS NATURE
         </motion.h1>
@@ -59,8 +59,8 @@ export default function Hero({ heroRef, heroOpacity, scrollTo }) {
           transition={{ delay: 1.3, duration: 1 }}
           className="mt-[22px] xl:mt-12"
         >
-          <MagneticButton onClick={() => scrollTo("contact")} className="py-[6px] xl:py-4 ps-[20px] pe-[6px] xl:ps-[49px] xl:pe-[12px] text-[14px] xl:text-[26px] text-black bg-white gap-[20px] xl:gap-[37px]">Register Interest
-            <span className="bg-black w-[29px] h-[29px] xl:w-[57px] xl:h-[57px] flex rounded-full justify-center items-center orange-play relative"></span>
+          <MagneticButton onClick={() => scrollTo("contact")} className="py-[6px] xl:py-3 ps-[20px] pe-[6px] xl:ps-[49px] xl:pe-[12px] text-[14px] xl:text-[19px] text-black bg-white gap-[20px] xl:gap-[37px]">Register Interest
+            <span className="bg-black w-[29px] h-[29px] xl:w-[41px] xl:h-[41px] flex rounded-full justify-center items-center orange-play relative"></span>
           </MagneticButton>
         </motion.div>
 

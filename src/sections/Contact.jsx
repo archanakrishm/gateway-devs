@@ -18,13 +18,13 @@ export default function Contact() {
       <div className="relative max-w-[1270px] mx-auto flex flex-col-reverse xl:grid xl:grid-cols-2 gap-[40px] xl:gap-20">
         <Reveal direction="left">
           <div className="flex flex-col justify-center h-full">
-            <h2 className="text-[30px] xl:text-[60px] text-white uppercase font-bold mb-[40px] xl:mb-[84px] max-xl:text-center">Contact</h2>
+            <h2 className="text-[30px] xl:text-[47px] text-white uppercase font-bold mb-[40px] xl:mb-[84px] max-xl:text-center">Contact</h2>
             <div className="flex flex-col gap-[20px] xl:gap-8">
               {CONTACT_INFO.map((c, i) => (
                 <div key={i} className="flex gap-[20px] xl:gap-5 items-start">
-                  <div className="text-xl shrink-0 mt-0.5"><img className="max-xl:w-[20px] max-xl:h-[20px]" src={c.icon} alt={c.label} /></div>
+                  <div className="text-xl shrink-0 mt-0.5"><img className="w-[32px] h-[32px]" src={c.icon} alt={c.label} /></div>
                   <div>
-                    <div className="text-[17px] xl:text-[35px] font-medium text-white">{c.value}</div>
+                    <div className="text-[17px] xl:text-[27px] font-medium text-white">{c.value}</div>
                   </div>
                 </div>
               ))}

@@ -17,18 +17,18 @@ export default function Projects() {
       <div className="grid xl:grid-cols-2 gap-[20px] xl:gap-10 items-start max-w-[1270px] mx-auto">
         <Reveal direction="left">
           <div className="img-reveal">
-            <h2 className="font-black text-[41px] xl:text-[70px] uppercase pb-[33px] xl:pb-[57px]">Project</h2>
+            <h2 className="font-black text-[41px] xl:text-[61px] uppercase pb-[33px] xl:pb-[57px]">Project</h2>
             <div className="flex items-baseline gap-4 flex-col xl:pb-[73px]">
-              <span className="text-orange text-[35px] xl:text-[60px] font-semibold leading-0 xl:leading-[60px]">01</span>
-              <h3 className="text-[35px] xl:text-[60px] font-semibold xl:leading-[60px]">Elysian Meadows</h3>
-              <p className="xl:max-w-xl text-white leading-relaxed text-[13px] md:text-[20px]">
+              <span className="text-orange text-[35px] xl:text-[52px] font-semibold leading-0 xl:leading-[60px]">01</span>
+              <h3 className="text-[35px] xl:text-[52px] font-semibold xl:leading-[60px]">Elysian Meadows</h3>
+              <p className="xl:max-w-xl text-white leading-relaxed text-[13px] md:text-[17px]">
                 With 38+ Years Of Experience In Residential, Commercial, Second
                 Home Development And Has Delivered Over 5 Million Square Feet
                 Constructed Across India... Responsible For Quality Construction,
                 Timely Execution And Completion Ensuring Every Villa
               </p>
             </div>
-            <MagneticButton onClick={() => scrollTo("contact")} className="py-4 px-10 text-[20px] bg-orange text-white max-xl:hidden gap-[14px]">Know More
+            <MagneticButton onClick={() => scrollTo("contact")} className="py-3 px-5 text-[17px] bg-orange text-white max-xl:hidden gap-[14px]">Know More
               <span className=" w-[57px] h-[57px] flex  justify-center items-center white-play relative"></span>
             </MagneticButton>
           </div>

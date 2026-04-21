@@ -9,7 +9,7 @@ export default function Team() {
       <div className="max-w-[1270px] mx-auto">
         <Reveal>
           <h2 className="text-[30px] xl:text-[60px]  text-black capitalize mb-[20px] text-center  font-semibold">Teams</h2>
-          <p className="text-[#969696] text-[20px] max-md:hidden text-center">With 38+ years of experience in residential, commercial, second home development <br />
+          <p className="text-[#969696] text-[19px] max-md:hidden text-center">With 38+ years of experience in residential, commercial, second home development <br />
             and has delivered over 5 million square feet constructed across India… responsible for<br />
             quality construction, timely execution and
             completion ensuring every Villa</p>
