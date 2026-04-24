@@ -1,9 +1,12 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { AnimatePresence, motion } from "motion/react";
 import { NAV_LINKS_FOOTER1, NAV_LINKS_FOOTER2, SOCIAL_LINKS } from "../constants";
 import footerLogo from "../assets/images/footer-logo.svg";
 import footerArrow from "../assets/images/footer-arrow.svg";
 
 export default function Footer({ scrollTo }) {
+  const [projectsOpen, setProjectsOpen] = useState(false);
   return (
     <footer className="bg-dark">
 
@@ -81,9 +84,44 @@ export default function Footer({ scrollTo }) {
           </div>
         </div>
       </div>
-      <div className="flex justify-between items-center pt-6 border-t border-[#414141] flex-col gap-[30px]">
+      <div className="flex justify-between items-center pt-6 border-t border-[#414141] flex-col gap-[20px]">
 
-        <a href=""><img src={footerArrow} alt="" /></a>
+        <button
+          type="button"
+          onClick={() => setProjectsOpen((p) => !p)}
+          aria-label={projectsOpen ? "Collapse projects" : "Expand projects"}
+          aria-expanded={projectsOpen}
+          className="cursor-pointer bg-transparent border-none p-0"
+        >
+          <img
+            src={footerArrow}
+            alt=""
+            className="transition-transform duration-300"
+            style={{ transform: projectsOpen ? "rotate(180deg)" : "rotate(0deg)" }}
+          />
+        </button>
+
+        <AnimatePresence initial={false}>
+          {projectsOpen && (
+            <motion.div
+              key="footer-projects-panel"
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="overflow-hidden w-full flex justify-start"
+            >
+              <Link
+                to="/projects"
+                onClick={() => setProjectsOpen(false)}
+                className="text-white text-[16px] xl:text-[18px] font-medium tracking-[1px] uppercase hover:text-orange py-2"
+              >
+                Project - Elysian Meadows
+              </Link>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
         <span className="text-xs text-white text-[14px] text-center w-full block">
           Copyrights ©2026 Getaway Developers and Resorts LLP
         </span>

@@ -1,5 +1,6 @@
 import Banner from "../components/Banner";
 import StickyMenu from "../components/StickyMenu";
+import AmenitiesSlider from "../components/AmenitiesSlider";
 import whyGetawayBanner from "../assets/images/whyget-banner.jpg";
 import { FEATURESDEV, ABOUT_IMG, IMAGES } from "../constants";
 
@@ -13,8 +14,8 @@ export default function WhyGetawayPage() {
             <Banner image={whyGetawayBanner} alt="Why Getaway Banner" />
 
             {/* Why Getaway Section */}
-            <section className="py-[60px] xl:py-[80px] px-12 xl:px-[80px] mx-auto relative bg-[#EAECF0]">
-                <div className="rounded-[19px] bg-white p-8 xl:p-[60px] shadow-lg">
+            <section className="py-[60px] xl:py-[80px] px-4 xl:px-[80px] mx-auto relative bg-[#EAECF0]">
+                <div className="rounded-none xl:rounded-[19px] bg-white p-4 xl:p-[60px] shadow-none xl:shadow-lg">
 
 
                     <div className="max-w-[1270px] mx-auto">
@@ -29,7 +30,7 @@ export default function WhyGetawayPage() {
                         </div>
 
                         {/* Comparison Table */}
-                        <div class="w-full  bg-[#f0f2f5] rounded-3xl p-6 md:p-12 shadow-sm">
+                        <div class="w-full  bg-[#f0f2f5] rounded-none md:rounded-3xl p-4 md:p-12 shadow-sm">
 
                             <div class="hidden lg:grid grid-cols-3 gap-8 mb-8 items-center">
                                 <div class="flex items-center gap-5"><div class="w-14 h-14 rounded-full bg-white flex items-center justify-center shadow-sm shrink-0"><img alt="Design Theme" src={IMAGES.featureOne} /></div><span class="text-[22px] font-semibold text-[#272727] leading-tight">Feature</span></div>
@@ -77,7 +78,7 @@ export default function WhyGetawayPage() {
                 </div>
             </section>
 
-            <section className="py-[38px] xl:py-30 px-12 xl:px-[80px]  mx-auto relative bg-white">
+            <section className="py-[38px] xl:py-30 px-4 xl:px-[80px]  mx-auto relative bg-white">
                 <div className="max-w-[1270px] mx-auto">
                      <header className="pb-[30px] md:pb-[60px]">
                         <h2 className="text-[34px] font-semibold text-gray-900 mb-3 text-center">
@@ -87,17 +88,9 @@ export default function WhyGetawayPage() {
                             Getaway Developers LLP specializes in luxury nature-themed developments featuring Bali-style tropical aesthetics, sustainable natural materials, expansive plotting schemes, bespoke villas, wellness centers, and resort-style gated communities across Maharashtra. With Elysian Meadows being the first project on Pali-Khopoli Road offers HNIs and second-home buyers a serene escape with professional villa rental management ensuring hassle-free ownership and returns.
                         </p>
                     </header>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {ABOUT_IMG.map((image) => (
-          <div key={image.id} className="overflow-hidden rounded-[17px] shadow-md">
-            <img
-              src={image.img}
-              alt={image.alt}
-              className="w-full h-[239px] md:h-[247px] object-cover transition-transform duration-500 hover:scale-105"
-            />
-          </div>
-        ))}
-      </div>
+                    <div className="about-slider-wrap">
+                        <AmenitiesSlider amenities={ABOUT_IMG} />
+                    </div>
                 </div>
             </section>
         </>

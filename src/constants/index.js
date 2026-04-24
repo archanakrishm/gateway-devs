@@ -110,7 +110,6 @@ export const IMAGES = {
 
 export const NAV_LINKS = ["Projects", "Why Getaway", "Contact"];
 export const NAV_LINKS_FOOTER1 = [
-  "Project",
   "Why Getaway",
   "Contact",
   "Investor Relations",

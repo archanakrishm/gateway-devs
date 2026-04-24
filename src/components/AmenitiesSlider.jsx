@@ -2,25 +2,33 @@ import React from 'react';
 import Slider from 'react-slick';
 import prevNav from "../assets/images/prev.svg";
 import nextNav from "../assets/images/next.svg";
+import ImageZoomModal from "./ImageZoomModal";
 
-const NextArrow = ({onClick}) => {
-  return (
-    <div className="slick-arrow slick-nexts" onClick={onClick}>
-      <img src={nextNav} className='w-[52px]' />
-    </div>
-  );
-};
+const NextArrow = ({ onClick }) => (
+  <button
+    type="button"
+    aria-label="Next"
+    onClick={onClick}
+    className="amenities-arrow amenities-arrow-next"
+  >
+    <img src={nextNav} alt="" />
+  </button>
+);
 
-const PrevArrow = ({onClick}) => {
-  return (
-    <div className="slick-arrow slick-prev" onClick={onClick}>
-      <img src={prevNav} className='w-[52px]' />
-    </div>
-  );
-};
+const PrevArrow = ({ onClick }) => (
+  <button
+    type="button"
+    aria-label="Previous"
+    onClick={onClick}
+    className="amenities-arrow amenities-arrow-prev"
+  >
+    <img src={prevNav} alt="" />
+  </button>
+);
 
 const AmenitiesSlider = ({ amenities }) => {
   const [ImgIndex, setImgIndex] = React.useState(0);
+  const [zoomSrc, setZoomSrc] = React.useState(null);
 
   const settings = {
     dots: true,
@@ -43,11 +51,18 @@ const AmenitiesSlider = ({ amenities }) => {
             <img
               src={item.img}
               alt={`Amenity ${index + 1}`}
-              className="w-full min-h-[300px] object-cover rounded-[20px]"
+              onClick={() => setZoomSrc(item.img)}
+              className="w-full min-h-[300px] object-cover rounded-[20px] cursor-zoom-in"
             />
           </div>
         ))}
       </Slider>
+      <ImageZoomModal
+        src={zoomSrc}
+        alt=""
+        isOpen={!!zoomSrc}
+        onClose={() => setZoomSrc(null)}
+      />
     </div>
   );
 };

@@ -33,7 +33,7 @@ export default function Contact() {
         </Reveal>
 
         <Reveal direction="right" delay={0.2}>
-          <div className="mt-10 rounded-[30px] overflow-hidden border border-white/[0.06]">
+          <div className="mt-10 rounded-[30px] overflow-hidden border border-white/[0.06] relative">
               <iframe
                 title="Getaway Developers Office"
                 src="https://maps.google.com/maps?q=Satyam+Shopping+Centre,+MG+Road,+Ghatkopar+East,+Mumbai&z=15&output=embed"
@@ -44,6 +44,13 @@ export default function Contact() {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 className="grayscale-[30%] hover:grayscale-0 transition-[filter] duration-500 h-[344px] xl:h-[556px]"
+              />
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Satyam+Shopping+Centre,+MG+Road,+Ghatkopar+East,+Mumbai"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open location in Google Maps"
+                className="absolute inset-0 z-10 cursor-pointer"
               />
             </div>
 

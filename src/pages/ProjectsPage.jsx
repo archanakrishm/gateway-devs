@@ -56,7 +56,7 @@ export default function ProjectsPage() {
 
 
 
-            <section className="py-[38px] xl:py-30 px-12 xl:px-[80px]  mx-auto relative">
+            <section className="py-[38px] xl:py-30 px-4 xl:px-[80px]  mx-auto relative">
                 <div className=" max-w-[1270px] mx-auto">
                     <div className="flex flex-col md:flex-row items-center gap-[80px]">
 
@@ -75,10 +75,7 @@ export default function ProjectsPage() {
                                 Elysian Meadows
                             </h2>
                             <p className="text-gray-500 leading-relaxed text-[16px]">
-                                With 38+ Years Of Experience In Residential, Commercial, Second Home
-                                Development And Has Delivered Over 5 Million Square Feet Constructed
-                                Across India. Responsible For Quality Construction, Timely Execution
-                                And Completion Ensuring Every Villa
+                                Elysian Meadows is a timeless retreat where Balinese architecture meets contemporary elegance. Each villa draws from tropical forms, natural textures, and open-space rhythms creating an immersive living experience where light, water, and lush greenery come together in seamless harmony. More than a residence, Elysian Meadows is a sanctuary where architectural beauty, landscape, and lifestyle exist in perfect balance.
                             </p>
                         </div>
 
@@ -93,10 +90,7 @@ export default function ProjectsPage() {
                                 Elysian Meadows
                             </h2>
                             <p className="text-gray-500 leading-relaxed text-[16px]">
-                                With 38+ Years Of Experience In Residential, Commercial, Second Home
-                                Development And Has Delivered Over 5 Million Square Feet Constructed
-                                Across India. Responsible For Quality Construction, Timely Execution
-                                And Completion Ensuring Every Villa
+                                Nestled in the serene hills of Pali-Khopoli, Elysian Meadows is an exclusive community of ultra-luxe tropical private villas, just 2 hours from Mumbai. Each half-acre NA-titled villa brings together five luxurious master suites, a temperature-controlled infinity pool, a double-height open-to-sky living area, and panoramic Sahyadri views within fully landscaped grounds. 
                             </p>
                         </div>
 
@@ -114,17 +108,14 @@ export default function ProjectsPage() {
 
 
 
-            <section className="py-[38px] xl:py-30 px-12 xl:px-[80px]  mx-auto relative bg-[#EAECF0]">
+            <section id="amenities" className="py-[38px] xl:py-30 px-4 xl:px-[80px]  mx-auto relative bg-[#EAECF0]">
                 <div className=" max-w-[1270px] mx-auto">
                     <header>
                         <h2 className="text-[34px] font-semibold text-gray-900 mb-3 text-center">
                             Amenities
                         </h2>
                         <p className="text-gray-500 leading-relaxed text-[16px] text-center max-w-[763px] mx-auto">
-                            With 38+ years of experience in residential, commercial, second home development
-                            and has delivered over 5 million square feet constructed across India… responsible for
-                            quality construction, timely execution and
-                            completion ensuring every Villa
+                            Amenities are not a checklist, they are a philosophy. Every feature has been chosen to deepen your connection to the space, elevate your everyday rituals, and ensure that life here feels effortless from the moment you arrive.
                         </p>
                     </header>
                     <div className=" py-[77px]">
@@ -164,7 +155,7 @@ export default function ProjectsPage() {
             </section>
 
 
-             <section className="py-[38px] xl:py-30 px-12 xl:px-[80px]  mx-auto relative bg-white">
+             <section id="plans" className="py-[38px] xl:py-30 px-4 xl:px-[80px]  mx-auto relative bg-white">
                 <div className=" max-w-[1270px] mx-auto">
                     <header className="pb-[94px]">
                         <h2 className="text-[34px] font-semibold text-gray-900 mb-3 text-center">
@@ -193,7 +184,7 @@ export default function ProjectsPage() {
 
 
 
- <section className="py-[38px] xl:py-30 px-12 xl:px-[80px]  mx-auto relative bg-[#EAECF0]">
+ <section id="location" className="py-[38px] xl:py-30 px-4 xl:px-[80px]  mx-auto relative bg-[#EAECF0]">
                 <div className=" max-w-[1270px] mx-auto">
                     <header className="mb-[50px]">
                         <h2 className="text-[34px] font-semibold text-gray-900 mb-3 text-center">
@@ -268,9 +259,10 @@ export default function ProjectsPage() {
             </section>
 
 
+            <PricesSection />
 
 
-            <section className="py-[38px] xl:py-30 px-12 xl:px-[80px]  mx-auto relative bg-white">
+            <section id="gallery" className="py-[38px] xl:py-30 px-4 xl:px-[80px]  mx-auto relative bg-[#EAECF0]">
                 <div className=" max-w-[1270px] mx-auto">
                     <header className="pb-[94px]">
                         <h2 className="text-[34px] font-semibold text-gray-900 mb-3 text-center">
@@ -351,5 +343,63 @@ export default function ProjectsPage() {
 
 
         </>
+    );
+}
+
+const PRICE_ROWS = [
+    { type: "1 Bed", price: "₹ 2.99 Cr.+" },
+    { type: "2 Bed", price: "₹ 3.99 Cr.+" },
+    { type: "3 Bed", price: "₹ 4.99 Cr.+" },
+    { type: "3 Bed with Study", price: "₹ 5.99 Cr.+" },
+    { type: "4 Bed", price: "₹ 8.59 Cr.+" },
+    { type: "5 Bed", price: "On request" },
+    { type: "Penthouse", price: "On request" },
+];
+
+function PricesSection() {
+    const [expanded, setExpanded] = useState(false);
+    const visibleRows = expanded ? PRICE_ROWS : PRICE_ROWS.slice(0, 3);
+
+    return (
+        <section id="prices" className="py-[38px] xl:py-30 px-4 xl:px-[80px] mx-auto relative bg-white">
+            <div className="max-w-[1270px] mx-auto">
+                <header className="pb-[40px] xl:pb-[60px]">
+                    <h2 className="text-[34px] font-semibold text-gray-900 mb-3 text-center">
+                        Prices
+                    </h2>
+                    <p className="text-gray-500 leading-relaxed text-[16px] text-center max-w-[763px] mx-auto">
+                        Indicative starting prices across configurations. Final pricing may vary
+                        based on view, floor, and availability. Connect with us for detailed
+                        cost sheets and current offers.
+                    </p>
+                </header>
+
+                <div className="border-t border-[#D9D9D9]">
+                    {visibleRows.map((row, i) => (
+                        <div
+                            key={i}
+                            className="grid grid-cols-2 border-b border-[#D9D9D9] py-[22px]"
+                        >
+                            <div className="text-[#272727] text-[18px] text-center">
+                                {row.type}
+                            </div>
+                            <div className="text-[#272727] text-[18px] text-center">
+                                {row.price}
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+                <div className="flex justify-center mt-[30px]">
+                    <button
+                        type="button"
+                        onClick={() => setExpanded((p) => !p)}
+                        className="text-[#F05923] text-[16px] underline cursor-pointer"
+                    >
+                        {expanded ? "View Less" : "View More"}
+                    </button>
+                </div>
+            </div>
+        </section>
     );
 }

@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Layout from './components/Layout'
+import ScrollToTop from './components/ScrollToTop'
 import GetawayWebsite from './GetawayWebsite'
 import ProjectsPage from './pages/ProjectsPage'
 import WhyGetawayPage from './pages/WhyGetawayPage'
@@ -11,6 +12,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <Layout scrollTo={scrollTo}>
         <Routes>
           <Route path="/" element={<GetawayWebsite scrollTo={scrollTo} />} />

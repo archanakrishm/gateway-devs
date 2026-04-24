@@ -2,38 +2,39 @@ import React from 'react';
 import Slider from 'react-slick';
 
 import { GETAWAYVILLAS } from '../constants';
-import prevNav from "../assets/images/prev.svg";
-import nextNav from "../assets/images/next.svg";
+import ImageZoomModal from './ImageZoomModal';
 
+const NextArrow = ({ onClick }) => (
+  <button
+    type="button"
+    aria-label="Next slide"
+    onClick={onClick}
+    className="slick-arrow slick-next home-nav-btn"
+  >
+    <span className="home-nav-icon home-nav-icon-right" />
+  </button>
+);
 
-const NextArrow = ({onClick}) => {
-  return (
-    <div className="slick-arrow slick-next" onClick={onClick}>
-      <img src={nextNav} className='w-[52px]' />
-    </div>
-  );
-};
-
-const PrevArrow = ({onClick}) => {
-  return (
-    <div className="slick-arrow slick-prev" onClick={onClick}>
-            <img src={prevNav} />
-
-    </div>
-  );
-};
+const PrevArrow = ({ onClick }) => (
+  <button
+    type="button"
+    aria-label="Previous slide"
+    onClick={onClick}
+    className="slick-arrow slick-prev home-nav-btn"
+  >
+    <span className="home-nav-icon home-nav-icon-left" />
+  </button>
+);
 
 const ImageSlider = () => {
 
   const [ImgIndex, setImgIndex] = React.useState(0);
-
-
-
+  const [zoomSrc, setZoomSrc] = React.useState(null);
 
   const settings = {
     dots: true,
     infinite: true,
-    speed: 300,
+    speed: 500,
     slidesToShow: 3,
     centerMode: true,
     lazyLoad: true,
@@ -43,25 +44,37 @@ const ImageSlider = () => {
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     beforeChange: (current, next) => setImgIndex(next),
-    // autoplay: true,
-    // autoplaySpeed: 3000,
-    // arrows: true,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          centerPadding: '30px',
+        },
+      },
+    ],
   };
 
-
   return (
-    <div className="w-full mx-auto ">
+    <div className="w-full mx-auto home-slider-wrap">
       <Slider {...settings} className="home-slider">
         {GETAWAYVILLAS.map((villa, index) => (
           <div key={index} className={index === ImgIndex ? "slide activeSlide" : "slide"} >
             <img
               src={villa.img}
               alt={`Slide ${index + 1}`}
-              className="w-full  object-cover rounded-[20px]"
+              onClick={() => index === ImgIndex && setZoomSrc(villa.img)}
+              className="w-full object-cover rounded-[20px] cursor-zoom-in"
             />
           </div>
         ))}
       </Slider>
+      <ImageZoomModal
+        src={zoomSrc}
+        alt="Villa"
+        isOpen={!!zoomSrc}
+        onClose={() => setZoomSrc(null)}
+      />
     </div>
   );
 };

@@ -1,17 +1,18 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
+import { useNavigate } from "react-router-dom";
 
 export default function StickyMenu() {
+  const navigate = useNavigate();
   const menuRef = useRef(null);
   const [isSticky, setIsSticky] = useState(false);
   const [triggerPoint, setTriggerPoint] = useState(0);
   const [navbarHeight, setNavbarHeight] = useState(70);
 
   const menuItems = [
-    { label: "About", id: "about" },
     { label: "Amenities", id: "amenities" },
-    { label: "Location", id: "location" },
     { label: "Plans", id: "plans" },
+    { label: "Location", id: "location" },
     { label: "Prices", id: "prices" },
     { label: "Gallery", id: "gallery" },
   ];
@@ -20,6 +21,31 @@ export default function StickyMenu() {
     { label: "Enquire", id: "enquire" },
     { label: "Chat", id: "chat" },
   ];
+
+  const handleScrollTo = (id) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const navbar = document.querySelector("nav");
+    const offset = (navbar?.offsetHeight || 0) + (menuRef.current?.offsetHeight || 0) + 10;
+    const y = el.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  };
+
+  const handleEnquire = () => {
+    navigate("/");
+    const tryScroll = (attempts = 0) => {
+      const el = document.getElementById("contact");
+      if (el) {
+        const navbar = document.querySelector("nav");
+        const offset = (navbar?.offsetHeight || 0) + 10;
+        const y = el.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top: y, behavior: "smooth" });
+      } else if (attempts < 20) {
+        setTimeout(() => tryScroll(attempts + 1), 100);
+      }
+    };
+    setTimeout(tryScroll, 100);
+  };
 
   useEffect(() => {
     // Get navbar height
@@ -70,16 +96,10 @@ export default function StickyMenu() {
             {menuItems.map((item) => (
               <motion.button
                 key={item.id}
-                className="text-[16px] font-medium text-[#383838] hover:text-[#F05923] transition-colors duration-200 relative whitespace-nowrap"
-               
+                onClick={() => handleScrollTo(item.id)}
+                className="text-[16px] font-medium text-[#383838] relative whitespace-nowrap cursor-pointer"
               >
                 {item.label}
-                <motion.div
-                  className="absolute bottom-[-8px] left-0 h-[2px] bg-[#F05923] origin-left"
-                  initial={{ scaleX: 0 }}
-                  whileHover={{ scaleX: 1 }}
-                  transition={{ duration: 0.3 }}
-                />
               </motion.button>
             ))}
           </div>
@@ -89,10 +109,11 @@ export default function StickyMenu() {
             {actionItems.map((item) => (
               <motion.button
                 key={item.id}
-                className={`text-[16px] font-medium transition-colors duration-200 whitespace-nowrap ${
+                onClick={item.id === "enquire" ? handleEnquire : undefined}
+                className={`text-[16px] font-medium whitespace-nowrap cursor-pointer ${
                   item.id === "enquire"
-                    ? "text-[#F05923] hover:text-gray-800"
-                    : "text-[#383838] hover:text-[#F05923]"
+                    ? "text-[#F05923]"
+                    : "text-[#383838]"
                 }`}
               >
                 {item.label}

@@ -14,7 +14,7 @@ export default function WhyGetaway() {
   const [projImg, setProjImg] = useState(0);
 
   return (
-    <section id="projects" className="py-[38px] xl:py-30 px-12 xl:px-[80px]  mx-auto relative">
+    <section id="projects" className="py-[38px] xl:py-30 px-4 xl:px-[80px]  mx-auto relative">
       <img src={WHY_BG} className="w-full object-cover absolute top-0 left-0 h-full" />
       <div className="grid xl:grid-cols-2 gap-[20px] xl:gap-10 items-start justify-between max-w-[1270px] mx-auto max-xl:flex-col-reverse max-xl:flex">
         <Reveal direction="left" delay={0.2} className="w-full">

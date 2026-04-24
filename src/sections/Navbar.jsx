@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { motion } from "motion/react";
 import { NAV_LINKS, IMAGES } from "../constants";
 import MagneticButton from "../components/MagneticButton";
@@ -13,6 +13,12 @@ export default function Navbar({ scrolled, scrollTo }) {
 
   const [menuOpen, setMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { pathname } = useLocation();
+  const visibleLinks = NAV_LINKS.filter(
+    (link) =>
+      !(pathname === "/projects" && link.toLowerCase() === "projects") &&
+      !(pathname === "/why-getaway" && link.toLowerCase() === "why getaway")
+  );
 
 
 const toggleMenu = () => setMenuOpen(prev => !prev);
@@ -65,7 +71,7 @@ const closeMenu = () => setMenuOpen(false);
 
           </div>
         </div>
-        {NAV_LINKS.map((link) => {
+        {visibleLinks.map((link) => {
           if (link.toLowerCase() === "projects") {
             return (
               <Link
@@ -121,7 +127,7 @@ const closeMenu = () => setMenuOpen(false);
         <button id="btnSearch" className="max-xl:hidden"><img src={searchIcon} alt="Search" /></button>
         <div className="xl:hidden flex justify-between gap-2 w-full mt-auto">
           <button onClick={() => setIsModalOpen(true)}>ENQUIRE</button>
-          <button className="flex gap-1 items-center"><img src={IMAGES.icoPhoneWhite} alt="Phone" />CALL</button>
+          <a href="tel:+919967558712" className="flex gap-1 items-center" onClick={closeMenu}><img src={IMAGES.icoPhoneWhite} alt="Phone" />CALL</a>
           <button className="flex gap-1 items-center"><img src={IMAGES.icoChat} alt="Chat" />CHAT</button>
 
         </div>

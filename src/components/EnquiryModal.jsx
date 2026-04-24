@@ -48,10 +48,8 @@ export default function EnquiryModal({ isOpen, onClose }) {
             <div className="bg-white  rounded-3xl p-[40px] border border-white/20 relative">
               {/* Close Button */}
               <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
                 onClick={onClose}
-                className="absolute top-[20px] right-[20px] w-[24px] h-[24px] flex items-center justify-center focus:outline-none hover:opacity-80 transition-opacity border rounded-full border-[#070707]"
+                className="absolute top-[20px] right-[20px] w-[24px] h-[24px] flex items-center justify-center focus:outline-none border rounded-full border-[#070707]"
                 aria-label="Close modal"
               >
                 <svg
@@ -171,10 +169,8 @@ export default function EnquiryModal({ isOpen, onClose }) {
                 {/* Submit Button */}
                 <div className="flex justify-center">
                 <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
                   type="submit"
-                  className="w-[146px] bg-red-500 hover:bg-red-600 text-white font-medium py-[7px] rounded-full mt-[28px] transition-colors text-[16px]"
+                  className="w-[146px] bg-red-500 text-white font-medium py-[7px] rounded-full mt-[28px] text-[16px]"
                 >
                   Submit
                 </motion.button>

@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
 import { PROJECT_IMAGES, PROJECT_STATS, PROJECT_BG } from "../constants";
 import Reveal from "../components/Reveal";
 import MagneticButton from "../components/MagneticButton";
+import ImageZoomModal from "../components/ImageZoomModal";
 import circleArrowLeft from "../assets/images/circle-arrow-left.svg";
 import circleArrowRight from "../assets/images/circle-arrow-right.svg";
 
@@ -10,9 +12,11 @@ import circleArrowRight from "../assets/images/circle-arrow-right.svg";
 
 export default function Projects() {
   const [projImg, setProjImg] = useState(0);
+  const [zoomOpen, setZoomOpen] = useState(false);
+  const navigate = useNavigate();
 
   return (
-    <section id="projects" className="py-[38px] xl:py-30 px-12 xl:px-[80px]  mx-auto relative">
+    <section id="projects" className="py-[38px] xl:py-30 px-4 xl:px-[80px]  mx-auto relative">
       <img src={PROJECT_BG} className="w-full object-cover absolute top-0 left-0 h-full" />
       <div className="grid xl:grid-cols-2 gap-[20px] xl:gap-10 items-start max-w-[1270px] mx-auto">
         <Reveal direction="left">
@@ -28,7 +32,7 @@ export default function Projects() {
                 Timely Execution And Completion Ensuring Every Villa
               </p>
             </div>
-            <MagneticButton onClick={() => scrollTo("contact")} className="py-3 px-5 text-[17px] bg-orange text-white max-xl:hidden gap-[14px]">Know More
+            <MagneticButton onClick={() => navigate("/projects")} className="py-3 px-5 text-[17px] bg-orange text-white max-xl:hidden gap-[14px]">Know More
               <span className=" w-[57px] h-[57px] flex  justify-center items-center white-play relative"></span>
             </MagneticButton>
           </div>
@@ -45,7 +49,8 @@ export default function Projects() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.8 }}
-                  className="w-full h-[268px] md:h-[452px] object-cover  top-0 left-0 rounded-[30px]"
+                  onClick={() => setZoomOpen(true)}
+                  className="w-full h-[268px] md:h-[452px] object-cover  top-0 left-0 rounded-[30px] cursor-zoom-in"
                 />
               </AnimatePresence>
               <div className="z-[5] flex justify-between items-center">
@@ -55,12 +60,18 @@ export default function Projects() {
                 </div>
               </div>
             </div>
-            <MagneticButton onClick={() => scrollTo("contact")} className="py-4 px-10 text-[14px] xl:text-[20px] bg-orange text-white xl:hidden gap-[14px]">Know More
+            <MagneticButton onClick={() => navigate("/projects")} className="py-4 px-10 text-[14px] xl:text-[20px] bg-orange text-white xl:hidden gap-[14px]">Know More
               <span className=" w-[57px] h-[57px] flex  justify-center items-center white-play relative"></span>
             </MagneticButton>
           </div>
         </Reveal>
       </div>
+      <ImageZoomModal
+        src={PROJECT_IMAGES[projImg]}
+        alt="Elysian Meadows"
+        isOpen={zoomOpen}
+        onClose={() => setZoomOpen(false)}
+      />
     </section>
   );
 }
