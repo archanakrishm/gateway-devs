@@ -1,0 +1,355 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { PROJECT_IMAGES, AMENITIES, PLANS, LOCATIONS } from "../constants";
+import Reveal from "../components/Reveal";
+import MagneticButton from "../components/MagneticButton";
+import Banner from "../components/Banner";
+import StickyMenu from "../components/StickyMenu";
+import AmenitiesSlider from "../components/AmenitiesSlider";
+import backArrow from "../assets/images/circle-arrow-left.svg";
+import bannerImage from "../assets/images/projects-banner.jpg";
+
+import villaImage2 from "../assets/images/villa5.jpg";
+import villaImage3 from "../assets/images/villa7.jpg";
+import GallerySlider from "../components/GallerySlider";
+import MediaTabs from "../components/MediaTabs";
+
+
+export default function ProjectsPage() {
+    const navigate = useNavigate();
+    const [selectedProject, setSelectedProject] = useState(0);
+      const [activeTab, setActiveTab] = useState("images"); // default
+
+
+    const features = [
+        {
+            icon: "/src/assets/images/pool.svg",
+            title: "Private Infinity Pool",
+            subtitle: "Balinese Villas",
+        },
+        {
+            icon: "/src/assets/images/club.svg",
+            title: "Clubhouse",
+            subtitle: "with Gym",
+        },
+        {
+            icon: "/src/assets/images/crick.svg",
+            title: "Cricket Turf &",
+            subtitle: "Multipurpose Court",
+        },
+        {
+            icon: "/src/assets/images/gate.svg",
+            title: "Gated Community",
+            subtitle: "with 24x7 Security",
+        },
+        {
+            icon: "/src/assets/images/garden.svg",
+            title: "Landscaped Gardens",
+            subtitle: "& Walking Paths",
+        },
+    ];
+
+    return (
+        <>
+            <Banner image={bannerImage} alt="Projects Banner" />
+            <StickyMenu />
+
+
+
+            <section className="py-[38px] xl:py-30 px-12 xl:px-[80px]  mx-auto relative">
+                <div className=" max-w-[1270px] mx-auto">
+                    <div className="flex flex-col md:flex-row items-center gap-[80px]">
+
+                        {/* Image Section */}
+                        <div className="w-full md:w-1/2">
+                            <img
+                                src={villaImage2}
+                                alt="Elysian Meadows"
+                                className="w-full h-full object-cover rounded-2xl"
+                            />
+                        </div>
+
+                        {/* Content Section */}
+                        <div className="w-full md:w-1/2">
+                            <h2 className="text-[34px] font-semibold text-gray-900 mb-3">
+                                Elysian Meadows
+                            </h2>
+                            <p className="text-gray-500 leading-relaxed text-[16px]">
+                                With 38+ Years Of Experience In Residential, Commercial, Second Home
+                                Development And Has Delivered Over 5 Million Square Feet Constructed
+                                Across India. Responsible For Quality Construction, Timely Execution
+                                And Completion Ensuring Every Villa
+                            </p>
+                        </div>
+
+                    </div>
+                    <div className="flex flex-col md:flex-row items-center gap-[80px] pt-[34px]">
+
+
+
+                        {/* Content Section */}
+                        <div className="w-full md:w-1/2">
+                            <h2 className="text-[34px] font-semibold text-gray-900 mb-3">
+                                Elysian Meadows
+                            </h2>
+                            <p className="text-gray-500 leading-relaxed text-[16px]">
+                                With 38+ Years Of Experience In Residential, Commercial, Second Home
+                                Development And Has Delivered Over 5 Million Square Feet Constructed
+                                Across India. Responsible For Quality Construction, Timely Execution
+                                And Completion Ensuring Every Villa
+                            </p>
+                        </div>
+
+                        {/* Image Section */}
+                        <div className="w-full md:w-1/2">
+                            <img
+                                src={villaImage3}
+                                alt="Elysian Meadows"
+                                className="w-full h-full object-cover rounded-2xl"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <section className="py-[38px] xl:py-30 px-12 xl:px-[80px]  mx-auto relative bg-[#EAECF0]">
+                <div className=" max-w-[1270px] mx-auto">
+                    <header>
+                        <h2 className="text-[34px] font-semibold text-gray-900 mb-3 text-center">
+                            Amenities
+                        </h2>
+                        <p className="text-gray-500 leading-relaxed text-[16px] text-center max-w-[763px] mx-auto">
+                            With 38+ years of experience in residential, commercial, second home development
+                            and has delivered over 5 million square feet constructed across India… responsible for
+                            quality construction, timely execution and
+                            completion ensuring every Villa
+                        </p>
+                    </header>
+                    <div className=" py-[77px]">
+                        <div className="max-w-6xl mx-auto px-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 text-center">
+
+                            {features.map((item, index) => (
+                                <div key={index} className="flex flex-col items-center">
+
+                                    {/* Icon Circle */}
+                                    <div className="w-16 h-16 flex items-center justify-center rounded-full bg-white shadow-sm mb-4">
+                                        {/* <span className="text-red-500 text-2xl">{item.icon}</span> */}
+                                        <img src={item.icon} alt={item.title} />
+                                    </div>
+
+                                    {/* Text */}
+                                    <p className="text-[#272727] text-[17px]">
+                                        {item.title}
+                                    </p>
+                                    <p className="text-[#272727] text-[17px]">
+                                        {item.subtitle}
+                                    </p>
+
+                                </div>
+                            ))}
+
+                        </div>
+                    </div>
+                    <AmenitiesSlider amenities={AMENITIES} />
+
+
+
+
+
+
+
+                </div>
+            </section>
+
+
+             <section className="py-[38px] xl:py-30 px-12 xl:px-[80px]  mx-auto relative bg-white">
+                <div className=" max-w-[1270px] mx-auto">
+                    <header className="pb-[94px]">
+                        <h2 className="text-[34px] font-semibold text-gray-900 mb-3 text-center">
+                            Plans
+                        </h2>
+                        <p className="text-gray-500 leading-relaxed text-[16px] text-center max-w-[763px] mx-auto">
+                            With 38+ years of experience in residential, commercial, second home development
+                            and has delivered over 5 million square feet constructed across India… responsible for
+                            quality construction, timely execution and
+                            completion ensuring every Villa
+                        </p>
+                    </header>
+
+
+                   
+                    <AmenitiesSlider amenities={PLANS} />
+
+
+
+
+
+
+
+                </div>
+            </section>
+
+
+
+ <section className="py-[38px] xl:py-30 px-12 xl:px-[80px]  mx-auto relative bg-[#EAECF0]">
+                <div className=" max-w-[1270px] mx-auto">
+                    <header className="mb-[50px]">
+                        <h2 className="text-[34px] font-semibold text-gray-900 mb-3 text-center">
+                            Location
+                        </h2>
+                        <p className="text-gray-500 leading-relaxed text-[16px] text-center max-w-[763px] mx-auto">
+                            With 38+ years of experience in residential, commercial, second home development
+                            and has delivered over 5 million square feet constructed across India… responsible for
+                            quality construction, timely execution and
+                            completion ensuring every Villa
+                        </p>
+                    </header>
+
+                    <div className="flex flex-col md:flex-row items-center gap-[80px]">
+
+                        {/* Image Section */}
+                        <div className="w-full md:w-1/2">
+                            
+                        <div className="grid grid-cols-1 gap-4  ">
+
+                            {LOCATIONS.map((item, index) => (
+                                <div key={index} className="flex gap-[19px] items-center">
+
+                                    {/* Icon Circle */}
+                                    <div className="w-16 h-16 min-w-16 flex items-center justify-center rounded-full bg-white shadow-sm">
+                                        {/* <span className="text-red-500 text-2xl">{item.icon}</span> */}
+                                        <img src={item.img} alt={item.title} />
+                                    </div>
+
+                                    {/* Text */}
+                                    <div>
+                                         <p className="text-[#272727] text-[12px]">
+                                        {item.title}
+                                    </p>
+                                    <p className="text-[#272727] text-[12px]">
+                                        {item.desc}
+                                    </p>
+                                    </div>
+                                   
+
+                                </div>
+                            ))}
+
+                        </div>
+                    
+                        </div>
+
+                        {/* Content Section */}
+                        <div className="w-full md:w-1/2">
+                            <iframe
+                title="Getaway Developers Office"
+                src="https://maps.google.com/maps?q=Satyam+Shopping+Centre,+MG+Road,+Ghatkopar+East,+Mumbai&z=15&output=embed"
+                width="100%"
+                height="556"
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="grayscale-[30%] hover:grayscale-0 transition-[filter] duration-500 h-[344px] xl:h-[556px] border-1 border-[#969696] rounded-[30px]"
+              />
+                        </div>
+
+                    </div>
+                    
+
+
+
+
+
+
+
+                </div>
+            </section>
+
+
+
+
+            <section className="py-[38px] xl:py-30 px-12 xl:px-[80px]  mx-auto relative bg-white">
+                <div className=" max-w-[1270px] mx-auto">
+                    <header className="pb-[94px]">
+                        <h2 className="text-[34px] font-semibold text-gray-900 mb-3 text-center">
+                            Gallery
+                        </h2>
+                        <p className="text-gray-500 leading-relaxed text-[16px] text-center max-w-[763px] mx-auto">
+                            With 38+ years of experience in residential, commercial, second home development
+                            and has delivered over 5 million square feet constructed across India… responsible for
+                            quality construction, timely execution and
+                            completion ensuring every Villa
+                        </p>
+                    </header>
+
+
+                    
+  {/* 🔹 Tabs */}
+        <div className="flex gap-8 border-b-[2px] mb-[40px] border-[#D9D9D9]">
+          <button
+            onClick={() => setActiveTab("images")}
+            className={`pb-2 text-[24px] font-medium relative top-[2px] border-b-2 ${
+              activeTab === "images"
+                ? "text-[#F05923]  border-[#F05923]"
+                : "text-[#383838] border-transparent"
+            }`}
+          >
+            Images
+          </button>
+
+          <button
+            onClick={() => setActiveTab("videos")}
+            className={`pb-2 text-[24px] border-b-2 font-medium relative top-[2px] ${
+              activeTab === "videos"
+                ? "text-[#F05923] border-[#F05923]"
+                : "text-[#383838] border-transparent"
+            }`}
+          >
+            Videos
+          </button>
+        </div>
+
+        {/* 🔹 Content */}
+        <div>
+          {activeTab === "images" && (
+            <GallerySlider key="images" images={AMENITIES} />
+          )}
+
+          {activeTab === "videos" && (
+            <div className="">
+                <GallerySlider key="images" images={AMENITIES} />
+              {/* {VIDEOS?.map((video, i) => (
+                <video
+                  key={i}
+                  src={video}
+                  controls
+                  className="w-full h-[300px] object-cover rounded-[20px]"
+                />
+              ))} */}
+            </div>
+          )}
+        </div>
+                    
+
+                   
+
+
+
+
+
+
+
+                </div>
+            </section>
+    
+
+
+
+
+
+
+        </>
+    );
+}

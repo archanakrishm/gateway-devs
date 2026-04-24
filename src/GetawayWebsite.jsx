@@ -27,17 +27,17 @@ if (!document.querySelector(`link[href="${fontLink.href}"]`)) {
 
 export default function GetawayWebsite() {
   const [heroIndex, setHeroIndex] = useState(0);
-  const [scrolled, setScrolled] = useState(false);
+  // const [scrolled, setScrolled] = useState(false);
   const heroRef = useRef(null);
   const { scrollYProgress: heroScroll } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
   const heroY = useTransform(heroScroll, [0, 1], ["0%", "40%"]);
   const heroOpacity = useTransform(heroScroll, [0, 0.6], [1, 0]);
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 80);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  // useEffect(() => {
+  //   const onScroll = () => setScrolled(window.scrollY > 80);
+  //   window.addEventListener("scroll", onScroll);
+  //   return () => window.removeEventListener("scroll", onScroll);
+  // }, []);
 
   useEffect(() => {
     const timer = setInterval(() => setHeroIndex((p) => (p + 1) % HERO_SLIDES.length), 5500);
@@ -50,7 +50,7 @@ export default function GetawayWebsite() {
 
   return (
     <div className="font-mono bg-dark text-white overflow-x-hidden min-h-screen">
-      <Navbar scrolled={scrolled} scrollTo={scrollTo} />
+      {/* <Navbar scrolled={scrolled} scrollTo={scrollTo} /> */}
       <Hero
         heroRef={heroRef}
         heroIndex={heroIndex}
@@ -71,7 +71,7 @@ export default function GetawayWebsite() {
             {/* <div className="pt-[27px] xl:pt-[89px] relative bg-white"></div> */}
 
       <Contact />
-      <Footer scrollTo={scrollTo} />
+      {/* <Footer scrollTo={scrollTo} /> */}
     </div>
   );
 }

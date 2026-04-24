@@ -32,6 +32,26 @@ import facebookIcon from "../assets/images/air.svg";
 import villaImg1 from "../assets/images/villa4.jpg";
 import villaImg2 from "../assets/images/villa5.jpg";
 import villaImg3 from "../assets/images/villa6.jpg";
+import planOneImg from "../assets/images/plan-1.png";
+import planTwoImg from "../assets/images/plan-2.png";
+import planThreeImg from "../assets/images/plan-3.png";
+
+import locationOne from "../assets/images/location-1.svg";
+import locationTwo from "../assets/images/location-2.svg";
+import locationThree from "../assets/images/location-3.svg";
+import locationFour from "../assets/images/location-4.svg";
+import locationFive from "../assets/images/location-5.svg";
+import locationSix from "../assets/images/location-6.svg";
+import featureOne from "../assets/images/feature-1.svg";
+import featureTwo from "../assets/images/feature-2.svg";
+import featureThree from "../assets/images/feature-3.svg";
+import featureFour from "../assets/images/feature-4.svg";
+import featureFive from "../assets/images/feature-5.svg";
+import featureSix from "../assets/images/feature-6.svg";
+
+import aboutOne from "../assets/images/abt-1.jpg";
+import aboutTwo from "../assets/images/abt-2.jpg";
+import aboutThree from "../assets/images/abt-3.jpg";
 
 export const IMAGES = {
   hero: heroImg,
@@ -65,16 +85,46 @@ export const IMAGES = {
   villaImg1: villaImg1,
   villaImg2: villaImg2,
   villaImg3: villaImg3,
-    villaImg4: villa1Img,
+  villaImg4: villa1Img,
   villaImg5: villa2Img,
   villaImg6: villa3Img,
+  planOneImg: planOneImg,
+  planTwoImg: planTwoImg,
+  planThreeImg: planThreeImg,
+  locationOne: locationOne,
+  locationTwo: locationTwo,
+  locationThree: locationThree,
+  locationFour: locationFour,
+  locationFive: locationFive,
+  locationSix: locationSix,
+  featureOne: featureOne,
+  featureTwo: featureTwo,
+  featureThree: featureThree,
+  featureFour: featureFour,
+  featureFive: featureFive,
+  featureSix: featureSix,
+  aboutOne: aboutOne,
+  aboutTwo: aboutTwo,
+  aboutThree: aboutThree,
 };
 
-export const NAV_LINKS = ["Home", "Projects", "Why Getaway", "Team", "Contact"];
-export const NAV_LINKS_FOOTER1 = ["Project", "Why Getaway", "Contact", "Investor Relations", "All Projects", "Disclaimer"];
-export const NAV_LINKS_FOOTER2 = ["Our Story", "Our Impact", "Careers", "Investor Relations", "All Projects", "Disclaimer"];
-
-
+export const NAV_LINKS = ["Projects", "Why Getaway", "Contact"];
+export const NAV_LINKS_FOOTER1 = [
+  "Project",
+  "Why Getaway",
+  "Contact",
+  "Investor Relations",
+  "All Projects",
+  "Disclaimer",
+];
+export const NAV_LINKS_FOOTER2 = [
+  "Our Story",
+  "Our Impact",
+  "Careers",
+  "Investor Relations",
+  "All Projects",
+  "Disclaimer",
+];
 
 export const GETAWAYVILLAS = [
   { img: IMAGES.villaImg1 },
@@ -83,24 +133,49 @@ export const GETAWAYVILLAS = [
   // { img: IMAGES.villaImg4 },
   { img: IMAGES.villaImg5 },
   { img: IMAGES.villaImg6 },
-
 ];
 
 export const HERO_SLIDES = [
-  { img: IMAGES.hero, subtitle: "Elysian Meadows", tagline: "Luxury villas nestled in nature's embrace" },
-  { img: IMAGES.hero2, subtitle: "Serene Living", tagline: "Where architecture meets the horizon" },
-  { img: IMAGES.hero3, subtitle: "Timeless Design", tagline: "Crafted for generations of memories" },
+  {
+    img: IMAGES.hero,
+    subtitle: "Elysian Meadows",
+    tagline: "Luxury villas nestled in nature's embrace",
+  },
+  {
+    img: IMAGES.hero2,
+    subtitle: "Serene Living",
+    tagline: "Where architecture meets the horizon",
+  },
+  {
+    img: IMAGES.hero3,
+    subtitle: "Timeless Design",
+    tagline: "Crafted for generations of memories",
+  },
 ];
 
-export const PROJECT_IMAGES = [IMAGES.project1, IMAGES.project1b, IMAGES.project1c];
+export const PROJECT_IMAGES = [
+  IMAGES.project1,
+  IMAGES.project1b,
+  IMAGES.project1c,
+];
 
 export const FEATURES = [
-  { icon: IMAGES.icoNature, title: "Nature-themed designs using natural, eco-friendly materials" },
-  { icon: IMAGES.icoVilla, title: "Luxury villa rental management for seamless yields and maintenance"},
-    { icon: IMAGES.icoNature, title: "Nature-themed designs using natural, eco-friendly materials" },
-      { icon: IMAGES.icoVilla, title: "Luxury villa rental management for seamless yields and maintenance"},
-
-
+  {
+    icon: IMAGES.icoNature,
+    title: "Nature-themed designs using natural, eco-friendly materials",
+  },
+  {
+    icon: IMAGES.icoVilla,
+    title: "Luxury villa rental management for seamless yields and maintenance",
+  },
+  {
+    icon: IMAGES.icoNature,
+    title: "Nature-themed designs using natural, eco-friendly materials",
+  },
+  {
+    icon: IMAGES.icoVilla,
+    title: "Luxury villa rental management for seamless yields and maintenance",
+  },
 ];
 
 export const PROJECT_STATS = [
@@ -111,15 +186,42 @@ export const PROJECT_STATS = [
 ];
 
 export const TEAM_MEMBERS = [
-  { name: "Manish Shah", role: "Co-Founder", img: manishShahImg, description: "With 38+ years of experience in residential, commercial, second home development and has delivered over 5 million square feet constructed across India… responsible for quality construction, timely execution and completion ensuring every Villa" },
-  { name: "Deepak Hawale", role: "Co-Founder", img: deepakHawaleImg ,description: "With 38+ years of experience in residential, commercial, second home development and has delivered over 5 million square feet constructed across India… responsible for quality construction, timely execution and completion ensuring every Villa" },
-  { name: "Neil Shah", role: "Co-Founder", img: neilShahImg, description: "With 38+ years of experience in residential, commercial, second home development and has delivered over 5 million square feet constructed across India… responsible for quality construction, timely execution and completion ensuring every Villa" },
+  {
+    name: "Manish Shah",
+    role: "Co-Founder",
+    img: manishShahImg,
+    description:
+      "With 38+ years of experience in residential, commercial, second home development and has delivered over 5 million square feet constructed across India… responsible for quality construction, timely execution and completion ensuring every Villa",
+  },
+  {
+    name: "Deepak Hawale",
+    role: "Co-Founder",
+    img: deepakHawaleImg,
+    description:
+      "With 38+ years of experience in residential, commercial, second home development and has delivered over 5 million square feet constructed across India… responsible for quality construction, timely execution and completion ensuring every Villa",
+  },
+  {
+    name: "Neil Shah",
+    role: "Co-Founder",
+    img: neilShahImg,
+    description:
+      "With 38+ years of experience in residential, commercial, second home development and has delivered over 5 million square feet constructed across India… responsible for quality construction, timely execution and completion ensuring every Villa",
+  },
 ];
 
 export const CONTACT_INFO = [
   { icon: IMAGES.icoPhone, label: "Phone", value: "+91 99675 58712" },
-  { icon: IMAGES.icoEmail, label: "Email", value: "info@getawaydevelopers.com" },
-  { icon: IMAGES.icoOffice, label: "Office", value: "A25, Satyam Shopping Centre, MG Road, Ghatkopar East, Mumbai 400 077" },
+  {
+    icon: IMAGES.icoEmail,
+    label: "Email",
+    value: "info@getawaydevelopers.com",
+  },
+  {
+    icon: IMAGES.icoOffice,
+    label: "Office",
+    value:
+      "A25, Satyam Shopping Centre, MG Road, Ghatkopar East, Mumbai 400 077",
+  },
 ];
 
 export const CONTACT_BG = IMAGES.contactBG;
@@ -137,5 +239,92 @@ export const GALLERY_ITEMS = [
 export const SOCIAL_LINKS = [
   { name: "Instagram", icon: instagramIcon },
   { name: "LinkedIn", icon: linkedinIcon },
-  { name: "Facebook", icon: facebookIcon }
+  { name: "Facebook", icon: facebookIcon },
 ];
+
+export const AMENITIES = [
+  { img: IMAGES.villaImg1, title: "Private Infinity Pool" },
+  { img: IMAGES.villaImg2, title: "Clubhouse with Gym" },
+  { img: IMAGES.villaImg3, title: "Cricket Turf & Multipurpose Court" },
+  { img: IMAGES.villaImg4, title: "Gated Community with 24x7 Security" },
+  { img: IMAGES.villaImg5, title: "Landscaped Gardens & Walking Paths" },
+];
+
+export const PLANS = [
+  { img: IMAGES.planOneImg, title: "Private Infinity Pool" },
+  { img: IMAGES.planTwoImg, title: "Clubhouse with Gym" },
+  { img: IMAGES.planThreeImg, title: "Cricket Turf & Multipurpose Court" },
+  { img: IMAGES.planOneImg, title: "Gated Community with 24x7 Security" },
+  { img: IMAGES.planTwoImg, title: "Landscaped Gardens & Walking Paths" },
+];
+
+export const LOCATIONS = [
+  {
+    img: IMAGES.locationOne,
+    title: "1. Attractions & Resorts",
+    desc: "Imagicaa Theme Park - 25 mins Radisson Resort Khopoli - 25 mins Novotel Imagicaa - 25 mins",
+  },
+  {
+    img: IMAGES.locationTwo,
+    title: "2.Hospitals",
+    desc: "Janki Multi Speciality Hospital Sanjivani Hospital",
+  },
+  {
+    img: IMAGES.locationThree,
+    title: "3. Restaurants & Cafés",
+    desc: "Tranquil Artisan Kitchen Kenisha Resort/Restaurant",
+  },
+  {
+    img: IMAGES.locationFour,
+    title: "4. Connectivity",
+    desc: "Khopoli Railway Station Mumbai–Pune Expressway Exit (Khalapur) - 35 mins Pali Road Junction",
+  },
+  {
+    img: IMAGES.locationFive,
+    title: "5. Nearby Towns",
+    desc: "Lonavala - 70 mins Panvel - 55 mins Navi Mumbai - 65 minsMumbai City - 110 mins",
+  },
+  {
+    img: IMAGES.locationSix,
+    title: "6.Airport",
+    desc: "Navi Mumbai International Airport - 70 mins ",
+  },
+];
+
+export const FEATURESDEV = [
+  {
+    title: "Design Theme",
+    advantage: "Balinese tropical, natural sustainable materials",
+    standard: "Generic modern",
+    img: IMAGES.featureTwo,
+  },
+  {
+    title: "Rental Management",
+    advantage: "Professional yields + maintenance",
+    standard: "Owner-managed",
+    img: IMAGES.featureThree,
+  },
+  {
+    title: "Location",
+    advantage: "25 mins Imagicaa, infra-ready",
+    standard: "Distant access",
+    img: IMAGES.featureFour,
+  },
+  {
+    title: "Wellness Integration",
+    advantage: "Dedicated spas, nature therapy",
+    standard: "Basic gyms",
+    img: IMAGES.featureFive,
+  },
+  {
+    title: "Customization",
+    advantage: "Plots + villas in gated resort",
+    standard: "Fixed units",
+    img: IMAGES.featureSix,
+  },
+];
+export const ABOUT_IMG = [
+  { img: IMAGES.aboutOne,alt: "About Getaway Developers" },
+  { img: IMAGES.aboutTwo,alt: "About Getaway Developers" },
+  { img: IMAGES.aboutThree,alt: "About Getaway Developers" }
+]

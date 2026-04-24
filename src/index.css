@@ -138,7 +138,7 @@ a { text-decoration: none; color: inherit; }
   z-index: 2;
 
 }
- .slick-track {
+ .home-slider .slick-track {
   display: flex;
   align-items: center;
  }
@@ -193,3 +193,31 @@ a { text-decoration: none; color: inherit; }
   .slick-dots li button:before {
     font-size: 8px;
   }
+  .amenities-slider .slick-prev {
+       left: -60px;
+    margin: 0;
+    top: calc(50% - 26px);
+    right: unset;
+        transform: unset;
+
+    cursor: pointer;
+
+  }
+    .amenities-slider .slick-nexts {
+       right: -60px;
+    margin: 0;
+    cursor: pointer;
+    top: calc(50% - 26px);
+        transform: unset;
+
+  }
+
+.main-slider {
+  max-width: calc(100% - 400px);
+}
+
+@media screen and (max-width: 1023px) {
+  .main-slider {
+    max-width: 100%;
+  }
+}
