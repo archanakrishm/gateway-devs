@@ -255,7 +255,7 @@ investment.
         <div className="flex gap-8 border-b-[2px] mb-[16px] md:mb-[40px] border-[#D9D9D9]">
           <button
             onClick={() => setActiveTab("images")}
-            className={`pb-2 text-[16px] md:text-[24px] font-medium relative top-[2px] border-b-2 ${
+            className={`pb-2 text-[16px] md:text-[20px] font-medium relative top-[2px] border-b-2 ${
               activeTab === "images"
                 ? "text-[#F05923]  border-[#F05923]"
                 : "text-[#383838] border-transparent"
@@ -266,7 +266,7 @@ investment.
 
           <button
             onClick={() => setActiveTab("videos")}
-            className={`pb-2 text-[16px] md:text-[24px] border-b-2 font-medium relative top-[2px] ${
+            className={`pb-2 text-[16px] md:text-[20px] border-b-2 font-medium relative top-[2px] ${
               activeTab === "videos"
                 ? "text-[#F05923] border-[#F05923]"
                 : "text-[#383838] border-transparent"
