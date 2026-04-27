@@ -24,7 +24,7 @@ export default function Footer({ scrollTo }) {
                   <Link
                     key={link}
                     to="/projects"
-                    className="text-[20px] font-medium tracking-[1.5px] text-white"
+                    className="text-[17px] md:text-[20px] font-medium tracking-[1.5px] text-white"
                   >
                     {link}
                   </Link>
@@ -33,7 +33,7 @@ export default function Footer({ scrollTo }) {
               return (
                 <span
                   key={link}
-                  className="text-[20px] font-medium tracking-[1.5px] text-white cursor-pointer"
+                  className="text-[17px] md:text-[20px] font-medium tracking-[1.5px] text-white cursor-pointer"
                   onClick={() => scrollTo(link.toLowerCase().replace(/\s+/g, ""))}
                 >
                   {link}
@@ -48,7 +48,7 @@ export default function Footer({ scrollTo }) {
                   <Link
                     key={link}
                     to="/projects"
-                    className="text-[20px] font-medium tracking-[1.5px] text-white"
+                    className="text-[17px] md:text-[20px] font-medium tracking-[1.5px] text-white"
                   >
                     {link}
                   </Link>
@@ -57,7 +57,7 @@ export default function Footer({ scrollTo }) {
               return (
                 <span
                   key={link}
-                  className=" text-[20px] font-medium tracking-[1.5px] text-white cursor-pointer"
+                  className="text-[17px] md:text-[20px] font-medium tracking-[1.5px] text-white cursor-pointer"
                   onClick={() => scrollTo(link.toLowerCase().replace(/\s+/g, ""))}
                 >
                   {link}

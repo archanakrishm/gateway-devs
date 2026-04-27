@@ -4,7 +4,7 @@ import MagneticButton from "../components/MagneticButton";
 
 export default function Hero({ heroRef, heroOpacity, scrollTo }) {
   return (
-    <section id="home" ref={heroRef} className="relative h-screen overflow-hidden">
+    <section id="home" ref={heroRef} className="relative h-[60dvh] md:h-screen overflow-hidden">
       <img
             src={HOME_BG}
             alt="Luxury villa"

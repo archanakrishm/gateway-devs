@@ -8,6 +8,7 @@ export default function StickyMenu() {
   const [isSticky, setIsSticky] = useState(false);
   const [triggerPoint, setTriggerPoint] = useState(0);
   const [navbarHeight, setNavbarHeight] = useState(70);
+  const [activeId, setActiveId] = useState(null);
 
   const menuItems = [
     { label: "Amenities", id: "amenities" },
@@ -76,10 +77,32 @@ export default function StickyMenu() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [triggerPoint]);
 
+  useEffect(() => {
+    const handleScrollActive = () => {
+      const scrollY = window.scrollY + window.innerHeight / 2;
+      let current = null;
+      menuItems.forEach((item) => {
+        const el = document.getElementById(item.id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          const elTop = rect.top + window.scrollY;
+          if (elTop <= scrollY) {
+            current = item.id;
+          }
+        }
+      });
+      setActiveId(current);
+    };
+
+    window.addEventListener("scroll", handleScrollActive);
+    handleScrollActive(); // initial check
+    return () => window.removeEventListener("scroll", handleScrollActive);
+  }, []);
+
   return (
     <motion.div
       ref={menuRef}
-      className={`w-full z-40 transition-all duration-300 ${
+      className={`w-full z-40 transition-all duration-300 max-md:hidden ${
         isSticky
           ? "fixed left-0 right-0 bg-white shadow-md"
           : "relative bg-white border-b border-gray-200 shadow-lg "
@@ -97,7 +120,9 @@ export default function StickyMenu() {
               <motion.button
                 key={item.id}
                 onClick={() => handleScrollTo(item.id)}
-                className="text-[16px] font-medium text-[#383838] relative whitespace-nowrap cursor-pointer"
+                className={`text-[16px] font-medium relative whitespace-nowrap cursor-pointer ${
+                  activeId === item.id ? 'active text-[#F05923]' : 'text-[#383838]'
+                }`}
               >
                 {item.label}
               </motion.button>

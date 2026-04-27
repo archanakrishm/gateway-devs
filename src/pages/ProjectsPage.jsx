@@ -58,39 +58,52 @@ export default function ProjectsPage() {
 
             <section className="py-[38px] xl:py-30 px-4 xl:px-[80px]  mx-auto relative">
                 <div className=" max-w-[1270px] mx-auto">
-                    <div className="flex flex-col md:flex-row items-center gap-[80px]">
+                    <div className="flex flex-col md:flex-row items-center gap-[16px] md:gap-[80px]">
 
                         {/* Image Section */}
                         <div className="w-full md:w-1/2">
                             <img
                                 src={villaImage2}
                                 alt="Elysian Meadows"
-                                className="w-full h-full object-cover rounded-2xl"
+                                className="w-full h-[200px] md:h-full object-cover rounded-2xl"
                             />
                         </div>
 
                         {/* Content Section */}
                         <div className="w-full md:w-1/2">
-                            <h2 className="text-[34px] font-semibold text-gray-900 mb-3">
+                            <h2 className="text-[20px] md:text-[30px] font-semibold text-gray-900 mb-3 md:uppercase leading-[20px] md:leading-[30px]">
+                                <span className="text-[#F05923] block">About</span>
                                 Elysian Meadows
                             </h2>
-                            <p className="text-gray-500 leading-relaxed text-[16px]">
-                                Elysian Meadows is a timeless retreat where Balinese architecture meets contemporary elegance. Each villa draws from tropical forms, natural textures, and open-space rhythms creating an immersive living experience where light, water, and lush greenery come together in seamless harmony. More than a residence, Elysian Meadows is a sanctuary where architectural beauty, landscape, and lifestyle exist in perfect balance.
+                            <p className="text-gray-500 leading-relaxed text-[14px] md:text-[16px]">
+                                Nestled in the serene hills of Pali-Khopoli, 
+Elysian Meadows is an exclusive community of 
+ultra-luxe tropical private villas, just 2 hours 
+from Mumbai. Each half-acre NA-titled villa 
+brings together five luxurious master suites, 
+a temperature-controlled infinity pool, a 
+double-height open-to-sky living area, 
+and panoramic Sahyadri views within fully landscaped grounds. 
+
+
                             </p>
                         </div>
 
                     </div>
-                    <div className="flex flex-col md:flex-row items-center gap-[80px] pt-[34px]">
+                    <div className="flex flex-col-reverse  md:flex-row items-center gap-[16px] md:gap-[80px] pt-[34px]">
 
 
 
                         {/* Content Section */}
                         <div className="w-full md:w-1/2">
-                            <h2 className="text-[34px] font-semibold text-gray-900 mb-3">
-                                Elysian Meadows
-                            </h2>
-                            <p className="text-gray-500 leading-relaxed text-[16px]">
-                                Nestled in the serene hills of Pali-Khopoli, Elysian Meadows is an exclusive community of ultra-luxe tropical private villas, just 2 hours from Mumbai. Each half-acre NA-titled villa brings together five luxurious master suites, a temperature-controlled infinity pool, a double-height open-to-sky living area, and panoramic Sahyadri views within fully landscaped grounds. 
+                           
+                            <p className="text-gray-500 leading-relaxed text-[14px] md:text-[16px]">
+                                Rooted in tropical design philosophy where 
+architecture becomes part of nature, never 
+apart from it. Elysian Meadows is conceived 
+as a place of deep belonging. A home that 
+happens to be both sanctuary and 
+investment.
                             </p>
                         </div>
 
@@ -99,7 +112,7 @@ export default function ProjectsPage() {
                             <img
                                 src={villaImage3}
                                 alt="Elysian Meadows"
-                                className="w-full h-full object-cover rounded-2xl"
+                                className="w-full h-[200px] md:h-full object-cover rounded-2xl"
                             />
                         </div>
                     </div>
@@ -111,15 +124,15 @@ export default function ProjectsPage() {
             <section id="amenities" className="py-[38px] xl:py-30 px-4 xl:px-[80px]  mx-auto relative bg-[#EAECF0]">
                 <div className=" max-w-[1270px] mx-auto">
                     <header>
-                        <h2 className="text-[34px] font-semibold text-gray-900 mb-3 text-center">
+                        <h2 className="text-[20px] md:text-[34px] font-semibold text-gray-900 mb-3 text-center">
                             Amenities
                         </h2>
-                        <p className="text-gray-500 leading-relaxed text-[16px] text-center max-w-[763px] mx-auto">
+                        <p className="text-gray-500 leading-relaxed text-[14px] md:text-[16px] text-center max-w-[763px] mx-auto">
                             Amenities are not a checklist, they are a philosophy. Every feature has been chosen to deepen your connection to the space, elevate your everyday rituals, and ensure that life here feels effortless from the moment you arrive.
                         </p>
                     </header>
-                    <div className=" py-[77px]">
-                        <div className="max-w-6xl mx-auto px-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 text-center">
+                    <div className=" py-[20px] md:py-[77px]">
+                        <div className="max-w-6xl mx-auto px-4 flex flex-wrap justify-center md:grid md:grid-cols-3 lg:grid-cols-5 gap-[16px] md:gap-8 text-center">
 
                             {features.map((item, index) => (
                                 <div key={index} className="flex flex-col items-center">
@@ -131,10 +144,10 @@ export default function ProjectsPage() {
                                     </div>
 
                                     {/* Text */}
-                                    <p className="text-[#272727] text-[17px]">
+                                    <p className="text-[#272727] text-[14px] md:text-[17px]">
                                         {item.title}
                                     </p>
-                                    <p className="text-[#272727] text-[17px]">
+                                    <p className="text-[#272727] text-[14px] md:text-[17px]">
                                         {item.subtitle}
                                     </p>
 
@@ -157,11 +170,11 @@ export default function ProjectsPage() {
 
              <section id="plans" className="py-[38px] xl:py-30 px-4 xl:px-[80px]  mx-auto relative bg-white">
                 <div className=" max-w-[1270px] mx-auto">
-                    <header className="pb-[94px]">
-                        <h2 className="text-[34px] font-semibold text-gray-900 mb-3 text-center">
+                    <header className="pb-[25px] md:pb-[94px]">
+                        <h2 className="text-[20px] md:text-[30px] font-semibold text-gray-900 mb-3 text-center">
                             Plans
                         </h2>
-                        <p className="text-gray-500 leading-relaxed text-[16px] text-center max-w-[763px] mx-auto">
+                        <p className="text-gray-500 leading-relaxed text-[14px] md:text-[16px] text-center max-w-[763px] mx-auto">
                             With 38+ years of experience in residential, commercial, second home development
                             and has delivered over 5 million square feet constructed across India… responsible for
                             quality construction, timely execution and
@@ -171,7 +184,7 @@ export default function ProjectsPage() {
 
 
                    
-                    <AmenitiesSlider amenities={PLANS} />
+                    <AmenitiesSlider amenities={PLANS} type="plans" />
 
 
 
@@ -186,19 +199,14 @@ export default function ProjectsPage() {
 
  <section id="location" className="py-[38px] xl:py-30 px-4 xl:px-[80px]  mx-auto relative bg-[#EAECF0]">
                 <div className=" max-w-[1270px] mx-auto">
-                    <header className="mb-[50px]">
-                        <h2 className="text-[34px] font-semibold text-gray-900 mb-3 text-center">
+                    <header className="mb-[20px] md:mb-[100px]">
+                        <h2 className="text-[20px] md:text-[30px] font-semibold text-gray-900 mb-3 text-center">
                             Location
                         </h2>
-                        <p className="text-gray-500 leading-relaxed text-[16px] text-center max-w-[763px] mx-auto">
-                            With 38+ years of experience in residential, commercial, second home development
-                            and has delivered over 5 million square feet constructed across India… responsible for
-                            quality construction, timely execution and
-                            completion ensuring every Villa
-                        </p>
+    
                     </header>
 
-                    <div className="flex flex-col md:flex-row items-center gap-[80px]">
+                    <div className="flex flex-col md:flex-row items-center gap-[35px] md:gap-[80px]">
 
                         {/* Image Section */}
                         <div className="w-full md:w-1/2">
@@ -242,7 +250,7 @@ export default function ProjectsPage() {
                 allowFullScreen=""
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                className="grayscale-[30%] hover:grayscale-0 transition-[filter] duration-500 h-[344px] xl:h-[556px] border-1 border-[#969696] rounded-[30px]"
+                className="grayscale-[30%] hover:grayscale-0 transition-[filter] duration-500 h-[344px] xl:h-[556px] border-1 border-[#969696] rounded-[10px] md:rounded-[30px]"
               />
                         </div>
 
@@ -264,25 +272,20 @@ export default function ProjectsPage() {
 
             <section id="gallery" className="py-[38px] xl:py-30 px-4 xl:px-[80px]  mx-auto relative bg-[#EAECF0]">
                 <div className=" max-w-[1270px] mx-auto">
-                    <header className="pb-[94px]">
-                        <h2 className="text-[34px] font-semibold text-gray-900 mb-3 text-center">
+                    <header className="pb-[30px] md:pb-[83px]">
+                        <h2 className="text-[20px] md:text-[30px] font-semibold text-gray-900 mb-3 text-center">
                             Gallery
                         </h2>
-                        <p className="text-gray-500 leading-relaxed text-[16px] text-center max-w-[763px] mx-auto">
-                            With 38+ years of experience in residential, commercial, second home development
-                            and has delivered over 5 million square feet constructed across India… responsible for
-                            quality construction, timely execution and
-                            completion ensuring every Villa
-                        </p>
+                       
                     </header>
 
 
                     
   {/* 🔹 Tabs */}
-        <div className="flex gap-8 border-b-[2px] mb-[40px] border-[#D9D9D9]">
+        <div className="flex gap-8 border-b-[2px] mb-[16px] md:mb-[40px] border-[#D9D9D9]">
           <button
             onClick={() => setActiveTab("images")}
-            className={`pb-2 text-[24px] font-medium relative top-[2px] border-b-2 ${
+            className={`pb-2 text-[16px] md:text-[24px] font-medium relative top-[2px] border-b-2 ${
               activeTab === "images"
                 ? "text-[#F05923]  border-[#F05923]"
                 : "text-[#383838] border-transparent"
@@ -293,7 +296,7 @@ export default function ProjectsPage() {
 
           <button
             onClick={() => setActiveTab("videos")}
-            className={`pb-2 text-[24px] border-b-2 font-medium relative top-[2px] ${
+            className={`pb-2 text-[16px] md:text-[24px] border-b-2 font-medium relative top-[2px] ${
               activeTab === "videos"
                 ? "text-[#F05923] border-[#F05923]"
                 : "text-[#383838] border-transparent"
@@ -364,10 +367,10 @@ function PricesSection() {
         <section id="prices" className="py-[38px] xl:py-30 px-4 xl:px-[80px] mx-auto relative bg-white">
             <div className="max-w-[1270px] mx-auto">
                 <header className="pb-[40px] xl:pb-[60px]">
-                    <h2 className="text-[34px] font-semibold text-gray-900 mb-3 text-center">
+                    <h2 className="text-[20px] md:text-[30px] font-semibold text-gray-900 mb-3 text-center">
                         Prices
                     </h2>
-                    <p className="text-gray-500 leading-relaxed text-[16px] text-center max-w-[763px] mx-auto">
+                    <p className="text-gray-500 leading-relaxed text-[14px] md:text-[16px] text-center max-w-[763px] mx-auto">
                         Indicative starting prices across configurations. Final pricing may vary
                         based on view, floor, and availability. Connect with us for detailed
                         cost sheets and current offers.
