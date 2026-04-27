@@ -1,12 +1,11 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { PROJECT_IMAGES, AMENITIES, PLANS, LOCATIONS } from "../constants";
+// import { useNavigate } from "react-router-dom";
+import { PROJECT_IMAGES, AMENITIES, PLANS, LOCATIONS, AMENITIES_LIST } from "../constants";
 import Reveal from "../components/Reveal";
 import MagneticButton from "../components/MagneticButton";
 import Banner from "../components/Banner";
 import StickyMenu from "../components/StickyMenu";
 import AmenitiesSlider from "../components/AmenitiesSlider";
-import backArrow from "../assets/images/circle-arrow-left.svg";
 import bannerImage from "../assets/images/projects-banner.jpg";
 
 import villaImage2 from "../assets/images/villa5.jpg";
@@ -16,38 +15,9 @@ import MediaTabs from "../components/MediaTabs";
 
 
 export default function ProjectsPage() {
-    const navigate = useNavigate();
-    const [selectedProject, setSelectedProject] = useState(0);
-      const [activeTab, setActiveTab] = useState("images"); // default
-
-
-    const features = [
-        {
-            icon: "/src/assets/images/pool.svg",
-            title: "Private Infinity Pool",
-            subtitle: "Balinese Villas",
-        },
-        {
-            icon: "/src/assets/images/club.svg",
-            title: "Clubhouse",
-            subtitle: "with Gym",
-        },
-        {
-            icon: "/src/assets/images/crick.svg",
-            title: "Cricket Turf &",
-            subtitle: "Multipurpose Court",
-        },
-        {
-            icon: "/src/assets/images/gate.svg",
-            title: "Gated Community",
-            subtitle: "with 24x7 Security",
-        },
-        {
-            icon: "/src/assets/images/garden.svg",
-            title: "Landscaped Gardens",
-            subtitle: "& Walking Paths",
-        },
-    ];
+    // const navigate = useNavigate();
+    // const [selectedProject, setSelectedProject] = useState(0);
+      const [activeTab, setActiveTab] = useState("images");
 
     return (
         <>
@@ -134,7 +104,7 @@ investment.
                     <div className=" py-[20px] md:py-[77px]">
                         <div className="max-w-6xl mx-auto px-4 flex flex-wrap justify-center md:grid md:grid-cols-3 lg:grid-cols-5 gap-[16px] md:gap-8 text-center">
 
-                            {features.map((item, index) => (
+                            {AMENITIES_LIST.map((item, index) => (
                                 <div key={index} className="flex flex-col items-center">
 
                                     {/* Icon Circle */}
