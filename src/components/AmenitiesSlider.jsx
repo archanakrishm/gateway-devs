@@ -26,18 +26,40 @@ const PrevArrow = ({ onClick }) => (
   </button>
 );
 
-const AmenitiesSlider = ({ amenities }) => {
+const AmenitiesSlider = ({ amenities, type }) => {
   const [ImgIndex, setImgIndex] = React.useState(0);
   const [zoomSrc, setZoomSrc] = React.useState(null);
+  const [slidesToShow, setSlidesToShow] = React.useState(3);
+  const [arrows, setArrows] = React.useState(true);
+
+  React.useEffect(() => {
+    const updateSlidesToShow = () => {
+      const width = window.innerWidth;
+      if (width < 768) {
+        setSlidesToShow(1);
+        setArrows(false);
+      } else if (width < 1024) {
+        setSlidesToShow(2);
+        setArrows(true);
+      } else {
+        setSlidesToShow(3);
+        setArrows(true);
+      }
+    };
+
+    updateSlidesToShow();
+    window.addEventListener('resize', updateSlidesToShow);
+    return () => window.removeEventListener('resize', updateSlidesToShow);
+  }, []);
 
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: slidesToShow,
     lazyLoad: true,
     slidesToScroll: 1,
-    arrows: true,
+    arrows: arrows,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     beforeChange: (current, next) => setImgIndex(next),
@@ -52,7 +74,7 @@ const AmenitiesSlider = ({ amenities }) => {
               src={item.img}
               alt={`Amenity ${index + 1}`}
               onClick={() => setZoomSrc(item.img)}
-              className="w-full min-h-[300px] object-cover rounded-[20px] cursor-zoom-in"
+              className={`w-full ${type !== "plans" ? "h-[250px]" : ""} md:min-h-[300px] object-cover rounded-[20px] cursor-zoom-in`}
             />
           </div>
         ))}

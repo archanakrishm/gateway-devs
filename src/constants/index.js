@@ -53,6 +53,18 @@ import aboutOne from "../assets/images/abt-1.jpg";
 import aboutTwo from "../assets/images/abt-2.jpg";
 import aboutThree from "../assets/images/abt-3.jpg";
 
+import IcoPool from "../assets/images/pool.svg";
+import IcoClub from "../assets/images/club.svg";
+import IcoCricket from "../assets/images/crick.svg";
+import IcoGated from "../assets/images/gate.svg";
+import IcoGarden from "../assets/images/garden.svg";
+
+
+
+
+
+import { title } from "motion/react-client";
+
 export const IMAGES = {
   hero: heroImg,
   hero2: hero2Img,
@@ -106,6 +118,11 @@ export const IMAGES = {
   aboutOne: aboutOne,
   aboutTwo: aboutTwo,
   aboutThree: aboutThree,
+  IcoPool: IcoPool,
+  IcoClub: IcoClub,
+  IcoCricket: IcoCricket,
+  IcoGated: IcoGated,
+  IcoGarden: IcoGarden,
 };
 
 export const NAV_LINKS = ["Projects", "Why Getaway", "Contact"];
@@ -326,4 +343,13 @@ export const ABOUT_IMG = [
   { img: IMAGES.aboutOne,alt: "About Getaway Developers" },
   { img: IMAGES.aboutTwo,alt: "About Getaway Developers" },
   { img: IMAGES.aboutThree,alt: "About Getaway Developers" }
+]
+
+
+export const AMENITIES_LIST = [
+  {icon: IMAGES.IcoPool, title: "Private Infinity Pool", subtitle: "Balinese Villas"},
+  {icon: IMAGES.IcoClub, title: "Clubhouse ", subtitle: "with Gym"},
+  {icon: IMAGES.IcoCricket, title: "Cricket Turf &", subtitle: " Multipurpose Court"},
+  {icon: IMAGES.IcoGated, title: "Gated Community ", subtitle: "with 24x7 Security"},
+  {icon: IMAGES.IcoGarden, title: "Landscaped Gardens ", subtitle: "& Walking Paths"},
 ]

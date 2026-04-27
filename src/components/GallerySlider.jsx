@@ -17,6 +17,7 @@ const PrevArrow = ({ onClick }) => (
 
 const GallerySlider = ({ images }) => {
   const [imgIndex, setImgIndex] = useState(0);
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 768);
 
   const sliderRef1 = useRef(null);
   const sliderRef2 = useRef(null);
@@ -27,6 +28,15 @@ const GallerySlider = ({ images }) => {
   useEffect(() => {
     setNav1(sliderRef1.current);
     setNav2(sliderRef2.current);
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   // 🔹 Main slider
@@ -41,26 +51,26 @@ const GallerySlider = ({ images }) => {
     beforeChange: (current, next) => setImgIndex(next),
   };
 
-  // 🔹 Thumbnail vertical slider
+  // 🔹 Thumbnail slider - horizontal on mobile, vertical on desktop
   const thumbSettings = {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 2,
+    slidesToShow: isDesktop ? 2 : 3,
     slidesToScroll: 1,
-    vertical: true,              // ✅ IMPORTANT
-    verticalSwiping: true,       // ✅ IMPORTANT
+    vertical: isDesktop,
+    verticalSwiping: isDesktop,
     swipeToSlide: true,
     focusOnSelect: true,
     arrows: false,
   };
 
   return (
-    <div className=" flex gap-6 flex-col lg:flex-row">
+    <div className=" flex gap-[10px] md:gap-[17px] flex-col lg:flex-row">
 
   
       {/* 🔹 Main Slider */}
-      <div className="main-slider">
+      <div className="main-slider flex-1">
         <Slider
           {...mainSettings}
           asNavFor={nav2}
@@ -68,11 +78,11 @@ const GallerySlider = ({ images }) => {
           className="gallery-slider"
         >
           {images.map((item, index) => (
-            <div key={index} className="p-[10px]">
+            <div key={index} className="">
               <img
                 src={item.img || item}
                 alt={item.title || `Image ${index + 1}`}
-                className="w-full h-[426px] object-cover rounded-[20px]"
+                className="w-full h-[228px] md:h-[426px] object-cover rounded-[20px]"
               />
             </div>
           ))}
@@ -80,8 +90,8 @@ const GallerySlider = ({ images }) => {
       </div>
 
 
-          {/* 🔹 Vertical Thumbnails */}
-      <div className="w-full lg:w-[368px]">
+          {/* 🔹 Thumbnails - Horizontal on mobile, Vertical on desktop */}
+      <div className={`w-full ${isDesktop ? "lg:w-[368px]" : ""}`}>
         <Slider
           {...thumbSettings}
           asNavFor={nav1}
@@ -89,11 +99,11 @@ const GallerySlider = ({ images }) => {
           className="gallery-slider-nav"
         >
           {images.map((item, index) => (
-            <div key={index} className="p-2 cursor-pointer">
+            <div key={index} className="px-2 cursor-pointer">
               <img
                 src={item.img || item}
                 alt={item.title || `Thumbnail ${index + 1}`}
-                className={`w-full h-[202px] object-cover rounded-lg ${
+                className={`w-full h-[108px] md:h-[202px] object-cover rounded-lg ${
                   index === imgIndex ? "border-2 border-blue-500" : ""
                 }`}
               />

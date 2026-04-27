@@ -18,14 +18,14 @@ export default function WhyGetawayTwo() {
           <span className="text-orange text-[30px] xl:text-[96px] font-semibold leading-3 xl:leading-[90px]">02</span>
         </header>
       </div>
-      <div className="mt-[16px] xl:mt-[24px] w-full">
+      <div className="mt-[35px] md:mt-[71px]  w-full">
         <ImageSlider images={sliderImages} />
       </div>
       <div className="max-w-[1270px] mx-auto px-12 xl:px-[80px]">
         <div className='mt-[16px] xl:mt-[24px]'>
-          <h3 className="font-semibold text-[29px] xl:text-[61px] text-[#383838] md:mb-[20px]">Getaway</h3>
-          <p className='text-[9px] xl:text-[20px] text-black capitalize'>With 38+ years of experience in residential, commercial, second home development and <br/>
-has delivered over 5 million square feet constructed across India… responsible for<br/>
+          <h3 className="font-semibold text-[29px] xl:text-[61px] text-[#383838] md:mb-[20px] md:leading-[60px]">Getaway</h3>
+          <p className='text-[14px] xl:text-[20px] text-black capitalize'>With 38+ years of experience in residential, commercial, second home development and <br className='hidden md:block'/>
+has delivered over 5 million square feet constructed across India… responsible for<br className='hidden md:block'/>
 quality construction, timely execution and 
  completion ensuring every Villa</p>
  <div className='flex justify-end mt-[20px]'>

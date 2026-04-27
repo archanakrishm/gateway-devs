@@ -25,7 +25,7 @@ export default function Projects() {
             <div className="flex items-baseline gap-4 flex-col xl:pb-[73px]">
               <span className="text-orange text-[35px] xl:text-[52px] font-semibold leading-0 xl:leading-[60px]">01</span>
               <h3 className="text-[35px] xl:text-[52px] font-semibold xl:leading-[60px]">Elysian Meadows</h3>
-              <p className="xl:max-w-xl text-white leading-relaxed text-[13px] md:text-[17px]">
+              <p className="xl:max-w-xl text-white leading-relaxed text-[14px] md:text-[17px]">
                 With 38+ Years Of Experience In Residential, Commercial, Second
                 Home Development And Has Delivered Over 5 Million Square Feet
                 Constructed Across India... Responsible For Quality Construction,
