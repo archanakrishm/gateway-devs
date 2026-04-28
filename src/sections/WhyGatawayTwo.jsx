@@ -18,7 +18,7 @@ export default function WhyGetawayTwo() {
           <span className="text-orange text-[30px] xl:text-[96px] font-semibold leading-3 xl:leading-[90px]">02</span>
         </header>
       </div>
-      <div className="mt-[35px] md:mt-[71px]  w-full">
+      <div >
         <ImageSlider images={sliderImages} />
       </div>
       <div className="max-w-[1270px] mx-auto px-12 xl:px-[80px]">
