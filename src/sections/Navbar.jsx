@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion } from "motion/react";
 import { NAV_LINKS, IMAGES } from "../constants";
 import MagneticButton from "../components/MagneticButton";
@@ -14,6 +14,24 @@ export default function Navbar({ scrolled, scrollTo }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { pathname } = useLocation();
+  const navigate = useNavigate();
+
+  const handleSectionScroll = (sectionId) => {
+    if (pathname !== "/") {
+      navigate("/");
+      const tryScroll = (attempts = 0) => {
+        const el = document.getElementById(sectionId);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+        } else if (attempts < 20) {
+          setTimeout(() => tryScroll(attempts + 1), 100);
+        }
+      };
+      setTimeout(tryScroll, 100);
+    } else {
+      scrollTo(sectionId);
+    }
+  };
   const visibleLinks = NAV_LINKS.filter(
     (link) =>
       !(pathname === "/projects" && link.toLowerCase() === "projects") &&
@@ -115,7 +133,7 @@ const closeMenu = () => setMenuOpen(false);
               key={link}
               className="nav-link text-[15px] xl:text-[17px] font-medium text-white max-xl:py-[28px] cursor-pointer"
               onClick={() => {
-                scrollTo(link.toLowerCase().replace(/\s+/g, ""));
+                handleSectionScroll(link.toLowerCase().replace(/\s+/g, ""));
                 closeMenu();
               }}
             >

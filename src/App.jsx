@@ -4,6 +4,8 @@ import ScrollToTop from './components/ScrollToTop'
 import GetawayWebsite from './GetawayWebsite'
 import ProjectsPage from './pages/ProjectsPage'
 import WhyGetawayPage from './pages/WhyGetawayPage'
+import ComingSoonPage from './pages/ComingSoonPage'
+import NotFoundPage from './pages/NotFoundPage'
 
 function App() {
   const scrollTo = (id) => {
@@ -18,6 +20,8 @@ function App() {
           <Route path="/" element={<GetawayWebsite scrollTo={scrollTo} />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/why-getaway" element={<WhyGetawayPage />} />
+          <Route path="/coming-soon" element={<ComingSoonPage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Layout>
     </Router>

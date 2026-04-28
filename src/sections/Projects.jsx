@@ -26,10 +26,14 @@ export default function Projects() {
               <span className="text-orange text-[35px] xl:text-[52px] font-semibold leading-0 xl:leading-[60px]">01</span>
               <h3 className="text-[35px] xl:text-[52px] font-semibold xl:leading-[60px]">Elysian Meadows</h3>
               <p className="xl:max-w-xl text-white leading-relaxed text-[14px] md:text-[17px]">
-                With 38+ Years Of Experience In Residential, Commercial, Second
-                Home Development And Has Delivered Over 5 Million Square Feet
-                Constructed Across India... Responsible For Quality Construction,
-                Timely Execution And Completion Ensuring Every Villa
+                Elysian Meadows is a timeless retreat where Balinese 
+                architecture meets contemporary elegance. Each villa 
+                draws from tropical forms, natural textures, and 
+                open-space rhythms creating an immersive living 
+                experience where light, water, and lush greenery come 
+                together in seamless harmony. More than a residence, 
+                Elysian Meadows is a sanctuary where architectural 
+                beauty, landscape, and lifestyle exist in perfect balance.
               </p>
             </div>
             <MagneticButton onClick={() => navigate("/projects")} className="py-3 px-5 text-[17px] bg-orange text-white max-xl:hidden gap-[14px]">Know More
