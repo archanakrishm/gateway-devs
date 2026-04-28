@@ -43,7 +43,12 @@ const ImageSlider = () => {
     arrows: true,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
-    beforeChange: (current, next) => setImgIndex(next),
+    beforeChange: (current, next) => {
+      const total = GETAWAYVILLAS.length;
+      // Normalize to handle infinite/cloned slide indices (can be negative or >= total)
+      const normalized = ((next % total) + total) % total;
+      setImgIndex(normalized);
+    },
     responsive: [
       {
         breakpoint: 768,
@@ -58,16 +63,30 @@ const ImageSlider = () => {
   return (
     <div className="w-full mx-auto home-slider-wrap">
       <Slider {...settings} className="home-slider">
-        {GETAWAYVILLAS.map((villa, index) => (
-          <div key={index} className={index === ImgIndex ? "slide activeSlide" : "slide"} >
-            <img
-              src={villa.img}
-              alt={`Slide ${index + 1}`}
-              onClick={() => index === ImgIndex && setZoomSrc(villa.img)}
-              className="w-full object-cover rounded-[20px] cursor-zoom-in"
-            />
-          </div>
-        ))}
+        {GETAWAYVILLAS.map((villa, index) => {
+          const total = GETAWAYVILLAS.length;
+          const isActive = index === ImgIndex;
+          const isPrev = index === (ImgIndex - 1 + total) % total;
+          const isNext = index === (ImgIndex + 1) % total;
+          const slideClass = [
+            'slide',
+            isActive && 'activeSlide',
+            isPrev && 'prevSlide',
+            isNext && 'nextSlide',
+          ]
+            .filter(Boolean)
+            .join(' ');
+          return (
+            <div key={index} className={slideClass}>
+              <img
+                src={villa.img}
+                alt={`Slide ${index + 1}`}
+                onClick={() => isActive && setZoomSrc(villa.img)}
+                className="w-full object-cover rounded-[20px] cursor-zoom-in"
+              />
+            </div>
+          );
+        })}
       </Slider>
       <ImageZoomModal
         src={zoomSrc}
