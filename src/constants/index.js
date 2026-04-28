@@ -58,6 +58,8 @@ import IcoClub from "../assets/images/club.svg";
 import IcoCricket from "../assets/images/crick.svg";
 import IcoGated from "../assets/images/gate.svg";
 import IcoGarden from "../assets/images/garden.svg";
+import IcoWellness from "../assets/images/icowellness.svg";
+import IcoLuxVilla from "../assets/images/icoluxvilla.svg";
 
 
 
@@ -123,6 +125,8 @@ export const IMAGES = {
   IcoCricket: IcoCricket,
   IcoGated: IcoGated,
   IcoGarden: IcoGarden,
+  IcoWellness: IcoWellness,
+  IcoLuxVilla: IcoLuxVilla,
 };
 
 export const NAV_LINKS = ["Projects", "Why Getaway", "Contact"];
@@ -182,11 +186,11 @@ export const FEATURES = [
     title: "Customisation - Plots & Luxury Villas",
   },
   {
-    icon: IMAGES.icoNature,
+    icon: IMAGES.IcoWellness,
     title: "Wellness Integration - Where Every Day Begins With Intention",
   },
   {
-    icon: IMAGES.icoVilla,
+    icon: IMAGES.IcoLuxVilla,
     title: "Luxury Villa Rental Management - Your Asset. Effortlessly Managed.",
   },
 ];
