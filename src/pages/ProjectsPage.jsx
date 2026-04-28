@@ -26,7 +26,7 @@ export default function ProjectsPage() {
 
 
 
-            <section className="py-[38px] xl:py-30 px-4 xl:px-[80px]  mx-auto relative">
+            <section id="about" className="py-[38px] xl:py-30 px-4 xl:px-[80px]  mx-auto relative">
                 <div className=" max-w-[1270px] mx-auto">
                     <div className="flex flex-col md:flex-row items-center gap-[16px] md:gap-[80px]">
 
@@ -144,12 +144,6 @@ investment.
                         <h2 className="text-[20px] md:text-[30px] font-semibold text-gray-900 mb-3 text-center">
                             Plans
                         </h2>
-                        <p className="text-gray-500 leading-relaxed text-[14px] md:text-[16px] text-center max-w-[763px] mx-auto">
-                            With 38+ years of experience in residential, commercial, second home development
-                            and has delivered over 5 million square feet constructed across India… responsible for
-                            quality construction, timely execution and
-                            completion ensuring every Villa
-                        </p>
                     </header>
 
 
@@ -341,37 +335,14 @@ function PricesSection() {
                         Prices
                     </h2>
                     <p className="text-gray-500 leading-relaxed text-[14px] md:text-[16px] text-center max-w-[763px] mx-auto">
-                        Indicative starting prices across configurations. Final pricing may vary
-                        based on view, floor, and availability. Connect with us for detailed
-                        cost sheets and current offers.
+                        <p className="text-[#272727] text-[16px] md:text-[20px] font-medium">
+                            NA Plots starting ₹40 Lakhs
+                        </p>
+                        <p className="text-[#272727] text-[16px] md:text-[20px] font-medium">
+                            Ultra Luxe Villas starting ₹6 Crores
+                        </p>
                     </p>
                 </header>
-
-                <div className="border-t border-[#D9D9D9]">
-                    {visibleRows.map((row, i) => (
-                        <div
-                            key={i}
-                            className="grid grid-cols-2 border-b border-[#D9D9D9] py-[22px]"
-                        >
-                            <div className="text-[#272727] text-[18px] text-center">
-                                {row.type}
-                            </div>
-                            <div className="text-[#272727] text-[18px] text-center">
-                                {row.price}
-                            </div>
-                        </div>
-                    ))}
-                </div>
-
-                <div className="flex justify-center mt-[30px]">
-                    <button
-                        type="button"
-                        onClick={() => setExpanded((p) => !p)}
-                        className="text-[#F05923] text-[16px] underline cursor-pointer"
-                    >
-                        {expanded ? "View Less" : "View More"}
-                    </button>
-                </div>
             </div>
         </section>
     );

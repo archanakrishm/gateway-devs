@@ -1,12 +1,66 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AnimatePresence, motion } from "motion/react";
 import { NAV_LINKS_FOOTER1, NAV_LINKS_FOOTER2, SOCIAL_LINKS } from "../constants";
 import footerLogo from "../assets/images/footer-logo.svg";
 import footerArrow from "../assets/images/footer-arrow.svg";
 
+const COMING_SOON_LINKS = new Set([
+  "investor relations",
+  "disclaimer",
+  "our story",
+  "our impact",
+  "careers",
+]);
+
 export default function Footer({ scrollTo }) {
   const [projectsOpen, setProjectsOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const renderLink = (link) => {
+    const key = link.toLowerCase();
+    const baseClass =
+      "text-[17px] md:text-[20px] font-medium tracking-[1.5px] text-white cursor-pointer";
+
+    if (key === "projects" || key === "all projects") {
+      return (
+        <Link key={link} to="/projects" className={baseClass}>
+          {link}
+        </Link>
+      );
+    }
+    if (key === "why getaway") {
+      return (
+        <Link key={link} to="/why-getaway" className={baseClass}>
+          {link}
+        </Link>
+      );
+    }
+    if (COMING_SOON_LINKS.has(key)) {
+      return (
+        <Link key={link} to="/coming-soon" className={baseClass}>
+          {link}
+        </Link>
+      );
+    }
+    return (
+      <span
+        key={link}
+        className={baseClass}
+        onClick={() => {
+          if (window.location.pathname !== "/") {
+            navigate("/");
+            setTimeout(() => scrollTo?.(key.replace(/\s+/g, "")), 200);
+          } else {
+            scrollTo?.(key.replace(/\s+/g, ""));
+          }
+        }}
+      >
+        {link}
+      </span>
+    );
+  };
+
   return (
     <footer className="bg-dark">
 
@@ -18,52 +72,10 @@ export default function Footer({ scrollTo }) {
 
         <div className="flex gap-[29px] flex-col md:flex-row">
           <div className="flex gap-3 flex-col min-w-[225px]">
-            {NAV_LINKS_FOOTER1.map((link) => {
-              if (link.toLowerCase() === "projects") {
-                return (
-                  <Link
-                    key={link}
-                    to="/projects"
-                    className="text-[17px] md:text-[20px] font-medium tracking-[1.5px] text-white"
-                  >
-                    {link}
-                  </Link>
-                );
-              }
-              return (
-                <span
-                  key={link}
-                  className="text-[17px] md:text-[20px] font-medium tracking-[1.5px] text-white cursor-pointer"
-                  onClick={() => scrollTo(link.toLowerCase().replace(/\s+/g, ""))}
-                >
-                  {link}
-                </span>
-              );
-            })}
+            {NAV_LINKS_FOOTER1.map(renderLink)}
           </div>
           <div className="flex gap-3 flex-col">
-            {NAV_LINKS_FOOTER2.map((link) => {
-              if (link.toLowerCase() === "projects") {
-                return (
-                  <Link
-                    key={link}
-                    to="/projects"
-                    className="text-[17px] md:text-[20px] font-medium tracking-[1.5px] text-white"
-                  >
-                    {link}
-                  </Link>
-                );
-              }
-              return (
-                <span
-                  key={link}
-                  className="text-[17px] md:text-[20px] font-medium tracking-[1.5px] text-white cursor-pointer"
-                  onClick={() => scrollTo(link.toLowerCase().replace(/\s+/g, ""))}
-                >
-                  {link}
-                </span>
-              );
-            })}
+            {NAV_LINKS_FOOTER2.map(renderLink)}
           </div>
         </div>
 

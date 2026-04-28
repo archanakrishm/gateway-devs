@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Slider from "react-slick";
 import prevNav from "../assets/images/prev.svg";
 import nextNav from "../assets/images/next.svg";
+import ImageZoomModal from "./ImageZoomModal";
 
 const NextArrow = ({ onClick }) => (
   <div className="slick-arrow absolute right-0 top-1/2 -translate-y-1/2 z-10 cursor-pointer" onClick={onClick}>
@@ -18,6 +19,7 @@ const PrevArrow = ({ onClick }) => (
 const GallerySlider = ({ images }) => {
   const [imgIndex, setImgIndex] = useState(0);
   const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 768);
+  const [zoomSrc, setZoomSrc] = useState(null);
 
   const sliderRef1 = useRef(null);
   const sliderRef2 = useRef(null);
@@ -82,7 +84,8 @@ const GallerySlider = ({ images }) => {
               <img
                 src={item.img || item}
                 alt={item.title || `Image ${index + 1}`}
-                className="w-full h-[228px] md:h-[426px] object-cover rounded-[20px]"
+                onClick={() => setZoomSrc(item.img || item)}
+                className="w-full h-[228px] md:h-[426px] object-cover rounded-[20px] cursor-zoom-in"
               />
             </div>
           ))}
@@ -112,6 +115,11 @@ const GallerySlider = ({ images }) => {
         </Slider>
       </div>
 
+      <ImageZoomModal
+        src={zoomSrc}
+        isOpen={!!zoomSrc}
+        onClose={() => setZoomSrc(null)}
+      />
     </div>
   );
 };

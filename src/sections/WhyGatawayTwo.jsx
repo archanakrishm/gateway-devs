@@ -24,10 +24,8 @@ export default function WhyGetawayTwo() {
       <div className="max-w-[1270px] mx-auto px-12 xl:px-[80px]">
         <div className='mt-[16px] xl:mt-[24px]'>
           <h3 className="font-semibold text-[29px] xl:text-[61px] text-[#383838] md:mb-[20px] md:leading-[60px]">Getaway</h3>
-          <p className='text-[14px] xl:text-[20px] text-black capitalize'>With 38+ years of experience in residential, commercial, second home development and <br className='hidden md:block'/>
-has delivered over 5 million square feet constructed across India… responsible for<br className='hidden md:block'/>
-quality construction, timely execution and 
- completion ensuring every Villa</p>
+          <p className='text-[14px] xl:text-[20px] text-black capitalize'>We don't build homes. We build the lives that happen inside them.
+Getaway Developers brings together visionary design, meticulous craftsmanship, and an unwavering belief that luxury and nature were always meant to coexist.</p>
  <div className='flex justify-end mt-[20px]'>
    <MagneticButton onClick={() => navigate("/why-getaway")} className="py-4 px-10 text-[20px] bg-orange text-white max-xl:hidden gap-[14px]">Know More
                 <span className=" w-[57px] h-[57px] flex  justify-center items-center white-play relative"></span>

@@ -1,16 +1,17 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
-import { useNavigate } from "react-router-dom";
+import EnquiryModal from "./EnquiryModal";
 
 export default function StickyMenu() {
-  const navigate = useNavigate();
   const menuRef = useRef(null);
   const [isSticky, setIsSticky] = useState(false);
   const [triggerPoint, setTriggerPoint] = useState(0);
   const [navbarHeight, setNavbarHeight] = useState(70);
-  const [activeId, setActiveId] = useState(null);
+  const [activeId, setActiveId] = useState("about");
+  const [isEnquiryOpen, setIsEnquiryOpen] = useState(false);
 
   const menuItems = [
+    { label: "About", id: "about" },
     { label: "Amenities", id: "amenities" },
     { label: "Plans", id: "plans" },
     { label: "Location", id: "location" },
@@ -33,19 +34,7 @@ export default function StickyMenu() {
   };
 
   const handleEnquire = () => {
-    navigate("/");
-    const tryScroll = (attempts = 0) => {
-      const el = document.getElementById("contact");
-      if (el) {
-        const navbar = document.querySelector("nav");
-        const offset = (navbar?.offsetHeight || 0) + 10;
-        const y = el.getBoundingClientRect().top + window.scrollY - offset;
-        window.scrollTo({ top: y, behavior: "smooth" });
-      } else if (attempts < 20) {
-        setTimeout(() => tryScroll(attempts + 1), 100);
-      }
-    };
-    setTimeout(tryScroll, 100);
+    setIsEnquiryOpen(true);
   };
 
   useEffect(() => {
@@ -80,7 +69,7 @@ export default function StickyMenu() {
   useEffect(() => {
     const handleScrollActive = () => {
       const scrollY = window.scrollY + window.innerHeight / 2;
-      let current = null;
+      let current = menuItems[0]?.id || null;
       menuItems.forEach((item) => {
         const el = document.getElementById(item.id);
         if (el) {
@@ -100,6 +89,7 @@ export default function StickyMenu() {
   }, []);
 
   return (
+    <>
     <motion.div
       ref={menuRef}
       className={`w-full z-40 transition-all duration-300 max-md:hidden ${
@@ -148,5 +138,7 @@ export default function StickyMenu() {
         </div>
       </div>
     </motion.div>
+    <EnquiryModal isOpen={isEnquiryOpen} onClose={() => setIsEnquiryOpen(false)} />
+    </>
   );
 }

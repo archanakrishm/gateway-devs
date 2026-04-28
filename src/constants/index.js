@@ -137,9 +137,6 @@ export const NAV_LINKS_FOOTER2 = [
   "Our Story",
   "Our Impact",
   "Careers",
-  "Investor Relations",
-  "All Projects",
-  "Disclaimer",
 ];
 
 export const GETAWAYVILLAS = [
@@ -178,19 +175,19 @@ export const PROJECT_IMAGES = [
 export const FEATURES = [
   {
     icon: IMAGES.icoNature,
-    title: "Nature-themed designs using natural, eco-friendly materials",
+    title: "Tropical Designs - Using Natural Materials",
   },
   {
     icon: IMAGES.icoVilla,
-    title: "Luxury villa rental management for seamless yields and maintenance",
+    title: "Customisation - Plots & Luxury Villas",
   },
   {
     icon: IMAGES.icoNature,
-    title: "Nature-themed designs using natural, eco-friendly materials",
+    title: "Wellness Integration - Where Every Day Begins With Intention",
   },
   {
     icon: IMAGES.icoVilla,
-    title: "Luxury villa rental management for seamless yields and maintenance",
+    title: "Luxury Villa Rental Management - Your Asset. Effortlessly Managed.",
   },
 ];
 
@@ -207,21 +204,21 @@ export const TEAM_MEMBERS = [
     role: "Co-Founder",
     img: manishShahImg,
     description:
-      "With 38+ years of experience in residential, commercial, second home development and has delivered over 5 million square feet constructed across India… responsible for quality construction, timely execution and completion ensuring every Villa",
+      "Visionary leadership with over 35+ years in luxury real estate development with over 5 milion square feet delivered PAN India.",
   },
   {
     name: "Deepak Hawale",
     role: "Co-Founder",
     img: deepakHawaleImg,
     description:
-      "With 38+ years of experience in residential, commercial, second home development and has delivered over 5 million square feet constructed across India… responsible for quality construction, timely execution and completion ensuring every Villa",
+      "Bringing expertise in land acquisition, approvals, market research and business development.",
   },
   {
     name: "Neil Shah",
     role: "Co-Founder",
     img: neilShahImg,
     description:
-      "With 38+ years of experience in residential, commercial, second home development and has delivered over 5 million square feet constructed across India… responsible for quality construction, timely execution and completion ensuring every Villa",
+      "Bringing expertise in finance, cashflow management, treasury, financial modelling, and corporate financing",
   },
 ];
 
