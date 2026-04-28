@@ -24,7 +24,7 @@ export default function Team() {
                   <div className="flex flex-col gap-[10px] md:gap-[20px] justify-center items-center max-md:min-w-[120px]">
                     <div className="rounded-[183px] w-[65px] h-[104px] md:w-[153px] md:h-[245px] bg-grey-light xl:mx-auto flex items-center justify-center">
                       <img
-                        src={member.img}
+                        src={humanIcon}
                         alt={member.name}
                         className="object-contain"
                       />
