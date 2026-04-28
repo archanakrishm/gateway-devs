@@ -5,37 +5,37 @@ import humanIcon from "../assets/images/human-icon.png";
 
 export default function Team() {
   return (
-    <section id="team" className="py-[40px] xl:py-[63px] px-[20px] xl:px-[85px] mx-auto bg-grey">
-      <div className="max-w-[1270px] mx-auto">
+    <section id="team" className="py-[20px] xl:py-[63px] px-[20px] xl:px-[85px] mx-auto bg-grey">
+      <div className="max-w-[1052px] mx-auto">
         <Reveal>
-          <h2 className="text-[30px] xl:text-[60px]  text-black capitalize mb-[20px] text-center  font-semibold">Teams</h2>
+          <h2 className="text-[30px] xl:text-[60px]  text-black capitalize md:mb-[20px] md:mb-[82px] text-center  font-semibold hidden md:block">Teams</h2>
         </Reveal>
 
-        <div className="flex flex-col gap-[15px] md:mt-[110px]">
+        <div className="flex flex-col gap-[15px]">
           {TEAM_MEMBERS.map((member, i) => (
             <Reveal key={i} delay={i * 0.15}>
               <motion.div
-                className={`team-card overflow-hidden max-xl:flex max-xl:justify-center max-xl:items-center max-xl:gap-[36px] md:p-[52px] md:bg-white rounded-[18px] ${i === 1 ? "max-xl:flex-row-reverse" : ""}`}
+                className={`team-card overflow-hidden max-xl:flex max-xl:justify-center max-xl:items-center max-xl:gap-[36px] p-[25px] md:p-[52px] bg-white rounded-[10px] md:rounded-[18px] ${i === 1 ? "max-xl:flex-row-reverse" : ""}`}
                 // whileHover={{ y: -8 }}
                 transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
               >
 
-                <div className="flex justify-between gap-[89px] md:max-w-[816px] mx-auto">
-                  <div className={`max-md:flex max-md:gap-[36px] max-md:justify-center max-md:items-center ${i === 1 ? "max-md:flex-row-reverse" : ""}`}>
-                    <div className="rounded-[183px] w-[112px] h-[179px] xl:w-[153px] xl:h-[245px] bg-grey-light xl:mx-auto flex items-center justify-center">
+                <div className="flex justify-between gap-[15px] md:gap-[89px] w-full md:max-w-[816px] mx-auto items-center">
+                  <div className="flex flex-col gap-[10px] md:gap-[20px] justify-center items-center max-md:min-w-[120px]">
+                    <div className="rounded-[183px] w-[65px] h-[104px] md:w-[153px] md:h-[245px] bg-grey-light xl:mx-auto flex items-center justify-center">
                       <img
-                        src={humanIcon}
+                        src={member.img}
                         alt={member.name}
-                        className="w-[60px] h-[60px] xl:w-[80px] xl:h-[80px] object-contain"
+                        className="object-contain"
                       />
                     </div>
-                    <div className="py-5">
-                      <h3 className="text-[18px] xl:text-[18px] font-semibold text-body-title xl:text-center">{member.name}</h3>
-                      <span className="text-[18px] xl:text-[18px] text-body-title xl:text-center block w-full">{member.role}</span>
+                    <div className="">
+                      <h3 className="text-[14px] md:text-[18px] font-semibold text-body-title text-center">{member.name}</h3>
+                      <span className="text-[14px] md:text-[18px] text-body-title xl:text-center block w-full text-center">{member.role}</span>
                     </div>
                   </div>
-                  <div className="hidden md:block">
-                    <p className="text-[#383838] text-[22px]">{member.description}</p>
+                  <div className="block">
+                    <p className="text-[#383838] text-[14px] md:text-[22px]">{member.description}</p>
                   </div>
                 </div>
               </motion.div>
