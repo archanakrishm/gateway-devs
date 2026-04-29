@@ -206,16 +206,25 @@ investment.
 
                         {/* Content Section */}
                         <div className="w-full md:w-1/2">
-                            <iframe
-                title="Getaway Developers Office"
-                src="https://maps.google.com/maps?q=Satyam+Shopping+Centre,+MG+Road,+Ghatkopar+East,+Mumbai&z=15&output=embed"
-                width="100%"
-                height="556"
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="grayscale-[30%] hover:grayscale-0 transition-[filter] duration-500 h-[344px] xl:h-[556px] border-1 border-[#969696] rounded-[10px] md:rounded-[30px]"
-              />
+                            <a
+                                href="https://www.google.com/maps/place/18.607032,73.257126/data=!4m6!3m5!1s0!7e2!8m2!3d18.6070319!4d73.2571263!18m1!1e1"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Open Elysian Meadows location in Google Maps"
+                                className="block relative cursor-pointer"
+                            >
+                                <iframe
+                                    title="Elysian Meadows Location"
+                                    src="https://maps.google.com/maps?q=18.607032,73.257126&z=15&output=embed"
+                                    width="100%"
+                                    height="556"
+                                    allowFullScreen=""
+                                    loading="lazy"
+                                    referrerPolicy="no-referrer-when-downgrade"
+                                    className="grayscale-[30%] hover:grayscale-0 transition-[filter] duration-500 h-[344px] xl:h-[556px] w-full border-1 border-[#969696] rounded-[10px] md:rounded-[30px] pointer-events-none"
+                                />
+                                <span className="absolute inset-0" aria-hidden="true" />
+                            </a>
                         </div>
 
                     </div>
